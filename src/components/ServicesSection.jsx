@@ -67,11 +67,11 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: (i % 3) * 0.1 }}
               className="group relative flex flex-col overflow-hidden bg-slate-container p-8 transition-colors hover:bg-obsidian md:p-10"
             >
-              <div className="relative mb-6 h-40 overflow-hidden border border-studio-silver/10">
+              <div className="relative mb-6 h-28 overflow-hidden rounded-lg border border-studio-silver/10">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="h-full w-full object-cover opacity-80 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100"
+                  className="h-full w-full object-cover opacity-75 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-obsidian/40" />
               </div>

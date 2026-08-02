@@ -24,8 +24,8 @@ export default function Home() {
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <Navbar />
       <VideoHero />
-      <AboutSection />
       <StatsSection />
+      <AboutSection />
       <ServicesSection />
       <ProjectsSection />
       <PartnersSection />
