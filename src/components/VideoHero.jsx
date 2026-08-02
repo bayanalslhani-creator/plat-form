@@ -14,9 +14,9 @@ export default function VideoHero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
     <section
@@ -31,9 +31,8 @@ export default function VideoHero() {
         <div className="absolute inset-0 bg-obsidian/30" />
       </motion.div>
 
-      {/* letterbox bars */}
-      <div className="absolute top-0 z-20 h-16 w-full bg-obsidian" />
-      <div className="absolute bottom-0 z-20 h-16 w-full bg-obsidian" />
+      {/* top fade for navbar */}
+      <div className="absolute top-0 z-20 h-32 w-full bg-gradient-to-b from-obsidian/90 to-transparent" />
 
       <motion.div style={{ opacity }} className="relative z-10 flex flex-col items-center px-6 text-center">
         <motion.span
@@ -51,7 +50,7 @@ export default function VideoHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-6xl font-black leading-[0.9] text-studio-silver sm:text-7xl md:text-8xl lg:text-9xl"
+          className="font-display text-6xl font-black leading-[1.05] text-studio-silver sm:text-7xl md:text-8xl lg:text-9xl"
         >
           نصنع
           <br />
@@ -80,20 +79,6 @@ export default function VideoHero() {
             تعرّف علينا ↓
           </a>
         </motion.div>
-      </motion.div>
-
-      {/* metadata strip */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-24 left-0 right-0 z-10 flex justify-center gap-8 font-mono text-[10px] tracking-[0.3em] text-studio-silver/40"
-        dir="ltr"
-      >
-        <span>ISO 800</span>
-        <span>f/2.8</span>
-        <span>1/200s</span>
-        <span>4K · 24FPS</span>
       </motion.div>
 
       {/* video lightbox */}

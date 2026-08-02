@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import CountUp from "@/components/CountUp";
 
 const STATS = [
@@ -47,14 +46,14 @@ function StatCard({ stat, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex min-h-[240px] flex-col justify-between overflow-hidden border border-studio-silver/10 bg-slate-container p-7 md:min-h-[300px] md:p-9"
+      className="group relative flex min-h-[280px] flex-col justify-between overflow-hidden border border-studio-silver/10 bg-slate-container p-8 md:min-h-[340px] md:p-10"
     >
       <span className="absolute left-3 top-3 h-4 w-4 border-l border-t border-amber/40" />
       <span className="absolute right-3 top-3 h-4 w-4 border-r border-t border-amber/40" />
       <span className="absolute bottom-3 left-3 h-4 w-4 border-b border-l border-amber/40" />
       <span className="absolute bottom-3 right-3 h-4 w-4 border-b border-r border-amber/40" />
 
-      <span className="pointer-events-none absolute -bottom-4 left-1/2 -translate-x-1/2 font-display text-[5rem] font-black leading-none text-studio-silver/[0.04] md:text-[8rem]">
+      <span className="pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 font-display text-[4rem] font-black leading-none text-studio-silver/[0.03] md:text-[6rem]">
         {stat.ghost}
       </span>
 
@@ -81,21 +80,11 @@ function StatCard({ stat, index }) {
 }
 
 export default function StatsSection() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const ghostY = useTransform(scrollYProgress, [0, 1], ["15%", "-15%"]);
-
   return (
-    <section ref={ref} dir="rtl" className="relative overflow-hidden bg-obsidian py-24 md:py-32">
-      <motion.div
-        style={{ y: ghostY }}
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-0 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[16rem] font-black leading-none text-studio-silver/[0.025] md:text-[26rem]"
-      >
+    <section dir="rtl" className="relative overflow-hidden bg-obsidian py-24 md:py-32">
+      <span className="pointer-events-none absolute left-1/2 top-1/2 -z-0 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[14rem] font-black leading-none text-studio-silver/[0.03] md:text-[22rem]">
         2M+
-      </motion.div>
+      </span>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="mb-14 md:mb-20">
