@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import SplashScreen from "@/components/SplashScreen";
+import Navbar from "@/components/Navbar";
 import VideoHero from "@/components/VideoHero";
+import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
-import FinalFrame from "@/components/FinalFrame";
+import ServicesSection from "@/components/ServicesSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import PartnersSection from "@/components/PartnersSection";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    if (showSplash) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = showSplash ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -21,9 +22,14 @@ export default function Home() {
   return (
     <main className="bg-obsidian">
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
+      <Navbar />
       <VideoHero />
+      <AboutSection />
       <StatsSection />
-      <FinalFrame />
+      <ServicesSection />
+      <ProjectsSection />
+      <PartnersSection />
+      <SiteFooter />
     </main>
   );
 }
