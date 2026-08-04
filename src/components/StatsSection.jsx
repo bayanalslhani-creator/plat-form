@@ -77,10 +77,6 @@ export default function StatsSection() {
             <span className="h-px w-8 bg-amber/60" />
             أرقام بلاتفورم
           </span>
-          <h2 className="mt-5 font-display text-4xl font-black leading-tight text-studio-silver md:text-6xl">
-            الحجم الذي تصنعه
-            <span className="text-amber"> الكاميرا</span> بالأرقام
-          </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -53,7 +53,7 @@ export default function AboutSection() {
             href="https://drive.google.com/file/d/1XdZHVCkXgblK7cM-G7eevXiizXcuApc3/view"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center gap-3 border border-studio-silver/20 px-6 py-3 font-mono text-sm tracking-wider text-studio-silver transition-colors hover:border-amber hover:text-amber"
+            className="mt-10 inline-flex items-center gap-3 rounded-lg border border-studio-silver/20 px-6 py-3 font-body text-sm tracking-wider text-studio-silver transition-colors hover:border-amber hover:text-amber"
           >
             <FileDown className="h-4 w-4" />
             تحميل الملف التعريفي

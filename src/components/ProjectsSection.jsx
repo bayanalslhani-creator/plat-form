@@ -105,7 +105,6 @@ export default function ProjectsSection() {
               أعمال <span className="text-amber">صنعتها</span> الكاميرا
             </h2>
           </div>
-          <span className="font-mono text-sm text-studio-silver/40">{PROJECTS.length} PROJECTS</span>
         </div>
 
         <div className="flex flex-col gap-px bg-studio-silver/10">
@@ -224,7 +223,7 @@ export default function ProjectsSection() {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center gap-3 border border-amber bg-amber px-6 py-3 font-mono text-sm tracking-wider text-obsidian transition-colors hover:bg-transparent hover:text-amber"
+                  className="mt-8 inline-flex items-center gap-3 rounded-lg border border-amber bg-amber px-6 py-3 font-body text-sm tracking-wider text-obsidian transition-colors hover:bg-transparent hover:text-amber"
                 >
                   <Play className="h-4 w-4 fill-current" />
                   {project.linkLabel}

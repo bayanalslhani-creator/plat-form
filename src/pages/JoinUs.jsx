@@ -87,7 +87,7 @@ export default function JoinUs() {
             </p>
             <Link
               to="/"
-              className="mt-2 inline-flex items-center gap-2 border border-studio-silver/20 px-6 py-3 font-mono text-sm tracking-wider text-studio-silver transition-colors hover:border-amber hover:text-amber"
+              className="mt-2 inline-flex items-center gap-2 rounded-lg border border-studio-silver/20 px-6 py-3 font-body text-sm tracking-wider text-studio-silver transition-colors hover:border-amber hover:text-amber"
             >
               العودة للرئيسية
               <ArrowRight className="h-4 w-4 rotate-180" />
@@ -177,7 +177,7 @@ export default function JoinUs() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="group inline-flex w-full items-center justify-center gap-3 border border-amber bg-amber px-8 py-4 font-mono text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-amber md:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-amber md:w-auto"
               >
                 {status === "loading" ? (
                   <>

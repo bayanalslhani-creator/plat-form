@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const LOGO = "https://platformm.sa/platform/images/platformmedia-white-trans.png";
+const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a7b45324b_.svg";
 
 const NAV = [
   { label: "الرئيسية", href: "#home" },
@@ -52,7 +52,7 @@ export default function Navbar() {
 
         <Link
           to="/join"
-          className="border border-amber/40 px-5 py-2 font-mono text-xs tracking-wider text-amber transition-colors hover:bg-amber hover:text-obsidian"
+          className="rounded-lg border border-amber/40 px-5 py-2 font-body text-xs tracking-wider text-amber transition-colors hover:bg-amber hover:text-obsidian"
         >
           سجل معنا
         </Link>
