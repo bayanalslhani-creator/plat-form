@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const LOGO =
-  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/59f915d42_.jpg";
+  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
 
 const SOCIALS = [
   {
@@ -120,7 +120,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-col items-center gap-5 border-t border-studio-silver/10 py-8 md:flex-row md:justify-between">
           <span className="font-mono text-[10px] tracking-[0.3em] text-studio-silver/30">
-            © {new Date().getFullYear()} PLAT · FORM MEDIA
+            © {new Date().getFullYear()} جميع الحقوق محفوظة
           </span>
           <div className="flex items-center gap-3">
             {SOCIALS.map((s) => (

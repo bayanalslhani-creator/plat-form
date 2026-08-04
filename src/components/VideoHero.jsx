@@ -34,16 +34,6 @@ export default function VideoHero() {
       </div>
 
       <motion.div style={{ opacity }} className="relative z-10 flex flex-col items-center px-6 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="mb-7 flex items-center gap-3 font-mono text-xs tracking-[0.4em] text-amber"
-        >
-          <span className="h-px w-8 bg-amber/60" />
-          PLAT · FORM MEDIA
-          <span className="h-px w-8 bg-amber/60" />
-        </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

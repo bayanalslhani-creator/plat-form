@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const LOGO_URL =
-  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/59f915d42_.jpg";
+  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
 
 export default function SplashScreen({ onFinish }) {
   const [stage, setStage] = useState("reveal");

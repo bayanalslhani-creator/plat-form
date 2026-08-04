@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
+import LightLeak from "@/components/LightLeak";
 import VideoHero from "@/components/VideoHero";
 import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <main className="bg-obsidian">
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
+      <LightLeak />
       <Navbar />
       <VideoHero />
       <StatsSection />

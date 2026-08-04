@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Clapperboard,
@@ -50,13 +50,6 @@ const SERVICES = [
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setActive((a) => (a + 1) % SERVICES.length);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
 
   return (
     <section
