@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const LOGO =
-  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a7b45324b_.svg";
+  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/59f915d42_.jpg";
 
 const SOCIALS = [
   {
