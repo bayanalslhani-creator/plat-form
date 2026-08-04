@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const LOGO = "https://platformm.sa/platform/images/platformmedia-white-trans.png";
 
 const NAV = [
   { label: "الرئيسية", href: "#home" },
@@ -30,12 +33,10 @@ export default function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#home" className="flex items-center gap-2">
-          <span className="font-display text-lg font-black tracking-tight text-studio-silver">
-            PLAT<span className="text-amber">·</span>FORM
-          </span>
-        </a>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <Link to="/" className="flex items-center">
+          <img src={LOGO} alt="Plat Form Media" className="h-9 w-auto" />
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {NAV.map((item) => (
@@ -49,12 +50,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#contact"
+        <Link
+          to="/join"
           className="border border-amber/40 px-5 py-2 font-mono text-xs tracking-wider text-amber transition-colors hover:bg-amber hover:text-obsidian"
         >
-          تواصل معنا
-        </a>
+          سجل معنا
+        </Link>
       </div>
     </motion.nav>
   );

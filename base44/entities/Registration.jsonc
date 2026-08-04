@@ -1,0 +1,32 @@
+{
+  "name": "Registration",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0643\u0627\u0645\u0644"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a"
+    },
+    "phone": {
+      "type": "string",
+      "title": "\u0631\u0642\u0645 \u0627\u0644\u062c\u0648\u0627\u0644"
+    },
+    "interest": {
+      "type": "string",
+      "title": "\u0645\u062c\u0627\u0644 \u0627\u0644\u0627\u0647\u062a\u0645\u0627\u0645"
+    },
+    "message": {
+      "type": "string",
+      "title": "\u0631\u0633\u0627\u0644\u0629"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "phone"
+  ]
+}

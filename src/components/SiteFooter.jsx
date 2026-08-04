@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function SiteFooter() {
@@ -24,13 +25,13 @@ export default function SiteFooter() {
           <p className="mx-auto mt-8 max-w-lg font-body text-studio-silver/60">
             إن كنت ترغب في الانضمام إلى فريقنا أو التعرف علينا بشكل أعمق، فسيشرفنا تواصلك معنا.
           </p>
-          <a
-            href="mailto:info@platformm.sa"
+          <Link
+            to="/join"
             className="mt-10 inline-flex items-center gap-3 border border-amber bg-amber px-8 py-4 font-mono text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-amber"
           >
-            تواصل معنا
+            سجل معنا
             <span className="h-px w-6 bg-current" />
-          </a>
+          </Link>
         </motion.div>
 
         {/* info grid */}
