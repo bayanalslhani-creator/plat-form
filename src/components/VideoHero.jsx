@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
-
-const VIMEO_ID = "1081002337";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 export default function VideoHero() {
   const ref = useRef(null);
@@ -12,6 +11,9 @@ export default function VideoHero() {
     offset: ["start start", "end start"],
   });
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const { content } = useSiteContent();
+  const hero = content.hero;
+  const vimeoId = hero.vimeo_id;
 
   return (
     <section
@@ -23,7 +25,7 @@ export default function VideoHero() {
       {/* background video (covers viewport, 16:9) */}
       <div className="absolute inset-0">
         <iframe
-          src={`https://player.vimeo.com/video/${VIMEO_ID}?autoplay=1&muted=1&loop=1&background=1&autopause=0`}
+          src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=1&background=1&autopause=0`}
           title="Platform Media Showreel"
           className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-[100vh] w-[177.78vh] min-w-[100vw] -translate-x-1/2 -translate-y-1/2"
           frameBorder="0"
@@ -34,16 +36,15 @@ export default function VideoHero() {
       </div>
 
       <motion.div style={{ opacity }} className="relative z-10 flex flex-col items-center px-6 text-center">
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl font-black leading-[1.05] text-studio-silver sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          نصنع
+          {hero.title_pre}
           <br />
-          <span className="text-amber">الإبداع</span> البصري
+          <span className="text-amber">{hero.title_highlight}</span> {hero.title_post}
         </motion.h1>
 
         <motion.div
@@ -59,13 +60,13 @@ export default function VideoHero() {
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-obsidian transition-transform group-hover:scale-110">
               <Play className="h-4 w-4 fill-current" />
             </span>
-            <span className="font-body text-base text-studio-silver">شاهد أعمالنا</span>
+            <span className="font-body text-base text-studio-silver">{hero.cta_play}</span>
           </button>
           <a
             href="#stats"
             className="font-mono text-sm tracking-wider text-studio-silver/60 transition-colors hover:text-amber"
           >
-            الأرقام تتحدث ↓
+            {hero.cta_stats}
           </a>
         </motion.div>
       </motion.div>
@@ -91,7 +92,7 @@ export default function VideoHero() {
               onClick={(e) => e.stopPropagation()}
             >
               <iframe
-                src={`https://player.vimeo.com/video/${VIMEO_ID}?autoplay=1`}
+                src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1`}
                 title="Plat Form Showreel"
                 className="h-full w-full"
                 allow="autoplay; fullscreen"

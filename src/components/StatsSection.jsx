@@ -1,38 +1,6 @@
 import { motion } from "framer-motion";
 import CountUp from "@/components/CountUp";
-
-const STATS = [
-  {
-    end: 2000000,
-    suffix: "+",
-    label: "مشاهدة على منصات التواصل",
-    sub: "Social Media Views",
-  },
-  {
-    end: 50,
-    suffix: "+",
-    label: "عدد عملائنا",
-    sub: "Trusted Clients",
-  },
-  {
-    end: 50,
-    suffix: "+",
-    label: "طاقم العمل الذين عملوا مع بلاتفورم",
-    sub: "Specialist Crew",
-  },
-  {
-    end: 1000,
-    suffix: "+",
-    label: "ساعات التصوير في أكثر من مكان في المملكة",
-    sub: "Shooting Hours",
-  },
-  {
-    end: 10,
-    suffix: "+",
-    label: "سنوات الخبرة في سوق العمل",
-    sub: "Years of Experience",
-  },
-];
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 function StatCard({ stat, index }) {
   return (
@@ -69,6 +37,9 @@ function StatCard({ stat, index }) {
 }
 
 export default function StatsSection() {
+  const { content } = useSiteContent();
+  const stats = content.stats.items;
+
   return (
     <section id="stats" dir="rtl" className="relative bg-obsidian py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -80,7 +51,7 @@ export default function StatsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {STATS.map((stat, i) => (
+          {stats.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} />
           ))}
         </div>

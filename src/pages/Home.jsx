@@ -9,6 +9,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import PartnersSection from "@/components/PartnersSection";
 import SiteFooter from "@/components/SiteFooter";
+import { SiteContentProvider } from "@/hooks/useSiteContent";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -25,13 +26,15 @@ export default function Home() {
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <LightLeak />
       <Navbar />
-      <VideoHero />
-      <StatsSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <PartnersSection />
-      <SiteFooter />
+      <SiteContentProvider>
+        <VideoHero />
+        <StatsSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <PartnersSection />
+        <SiteFooter />
+      </SiteContentProvider>
     </main>
   );
 }

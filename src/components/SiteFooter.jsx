@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 const LOGO =
   "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
@@ -24,6 +25,9 @@ const SOCIALS = [
 ];
 
 export default function SiteFooter() {
+  const { content } = useSiteContent();
+  const footer = content.footer;
+
   return (
     <footer
       id="contact"
@@ -40,21 +44,21 @@ export default function SiteFooter() {
           className="text-center"
         >
           <span className="font-mono text-xs tracking-[0.4em] text-amber/70">
-            READY FOR PRODUCTION?
+            {footer.cta_eyebrow}
           </span>
           <h2 className="mt-6 font-display text-4xl font-black leading-tight text-studio-silver transition-colors duration-300 hover:text-amber md:text-7xl lg:text-8xl">
-            انضم لمجتمع
+            {footer.cta_heading_line1}
             <br />
-            بلاتفورم ميديا
+            {footer.cta_heading_line2}
           </h2>
           <p className="mx-auto mt-8 max-w-lg font-body text-studio-silver/60">
-            إن كنت ترغب في الانضمام إلى فريقنا أو التعرف علينا بشكل أعمق، فسيشرفنا تواصلك معنا.
+            {footer.cta_paragraph}
           </p>
           <Link
             to="/join"
             className="mt-10 inline-flex items-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-amber"
           >
-            سجل معنا
+            {footer.cta_button}
             <span className="h-px w-6 bg-current" />
           </Link>
         </motion.div>
@@ -64,7 +68,7 @@ export default function SiteFooter() {
           <div>
             <img src={LOGO} alt="Plat Form Media" className="h-10 w-auto" />
             <p className="mt-4 font-body text-sm text-studio-silver/50">
-              نصنع محتوى بصرياً سينمائياً يُلهم ويثير — من قلب المملكة العربية السعودية.
+              {footer.about_text}
             </p>
           </div>
 
@@ -99,20 +103,18 @@ export default function SiteFooter() {
                 dir="ltr"
               >
                 <Phone className="h-4 w-4 text-amber" />
-                +966 556543321
+                {footer.phone}
               </li>
               <li
                 className="flex items-center gap-3 font-body text-sm text-studio-silver/65"
                 dir="ltr"
               >
                 <Mail className="h-4 w-4 text-amber" />
-                info@platformm.sa
+                {footer.email}
               </li>
               <li className="flex items-start gap-3 font-body text-sm text-studio-silver/65">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                Riyadh 8124-12253 | AL-Wurud - King Abdullah Road
-                <br />
-                Kingdom of Saudi Arabia
+                <span style={{ whiteSpace: "pre-line" }}>{footer.address}</span>
               </li>
             </ul>
           </div>

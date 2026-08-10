@@ -8,48 +8,17 @@ import {
   Palette,
   Megaphone,
 } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
-const SERVICES = [
-  {
-    title: "قبل الإنتاج المرئي",
-    desc: "هي مرحلة التخطيط والتجهيز، نبدأ فيها بفهم فكرة العميل وأهدافه، ثم نكتب السيناريو، ونرسم تصور المشاهد، ونحدد مواقع التصوير والمواهب المناسبة، مع تجهيز الجدول الزمني والتصاريح وكل ما يلزم قبل بدء التنفيذ.",
-    icon: Clapperboard,
-    tag: "01 · PRE-PRODUCTION",
-  },
-  {
-    title: "التصوير و الإنتاج المرئي",
-    desc: "في هذه المرحلة ننفذ الفكرة على أرض الواقع، من خلال التصوير والإخراج باستخدام معدات احترافية، مع متابعة دقيقة لكل مشهد لضمان الجودة وتحقيق رؤية العميل بشكل دقيق وجذاب.",
-    icon: Video,
-    tag: "02 · PRODUCTION",
-  },
-  {
-    title: "صناعة المحتوى الإبداعي",
-    desc: "نقوم بمنتجة المحتوى وتحريره بشكل احترافي، مع إضافة المؤثرات البصرية والصوتية، وتصحيح الألوان، ودمج العناصر بشكل متناسق لإخراج عمل نهائي يعبّر عن الرسالة بأفضل صورة.",
-    icon: Film,
-    tag: "03 · POST-PRODUCTION",
-  },
-  {
-    title: "إدارة الحسابات التواصل الإجتماعي",
-    desc: "ندير حضوركم الرقمي بشكل كامل، من إعداد خطة المحتوى وتصميم المنشورات، إلى الجدولة والردود وتحليل الأداء، لضمان تواصل فعال ومستمر مع الجمهور.",
-    icon: Share2,
-    tag: "04 · SOCIAL MANAGEMENT",
-  },
-  {
-    title: "بناء العلامة والهوية التجارية",
-    desc: "نصمم هوية متكاملة تعبر عن شخصية العلامة التجارية، تشمل الشعار، الألوان، الخطوط، والدليل الإرشادي، لنصنع انطباعًا بصريًا متماسكًا ومميزًا.",
-    icon: Palette,
-    tag: "05 · BRANDING",
-  },
-  {
-    title: "التسويق الإلكتروني",
-    desc: "نساعد في نشر المحتوى عبر المنصات المناسبة من خلال حملات مدروسة، نستهدف فيها الجمهور المطلوب، ونتابع الأداء لتحسين النتائج وزيادة التفاعل والانتشار.",
-    icon: Megaphone,
-    tag: "06 · DIGITAL MARKETING",
-  },
-];
+const ICONS = { Clapperboard, Video, Film, Share2, Palette, Megaphone };
 
 export default function ServicesSection() {
+  const { content } = useSiteContent();
+  const services = content.services.items;
   const [active, setActive] = useState(0);
+
+  const safeActive = Math.min(active, services.length - 1);
+  const current = services[safeActive] || services[0];
 
   return (
     <section
@@ -74,9 +43,9 @@ export default function ServicesSection() {
 
         {/* horizontal moving strip */}
         <div className="flex snap-x items-stretch gap-3 overflow-x-auto pb-3 md:justify-center md:gap-4 [&::-webkit-scrollbar]:hidden">
-          {SERVICES.map((s, i) => {
-            const Icon = s.icon;
-            const isActive = i === active;
+          {services.map((s, i) => {
+            const Icon = ICONS[s.icon] || Clapperboard;
+            const isActive = i === safeActive;
             return (
               <button
                 key={i}
@@ -112,23 +81,25 @@ export default function ServicesSection() {
         </div>
 
         {/* active service detail */}
-        <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mt-12 max-w-2xl"
-        >
-          <span className="font-mono text-[10px] tracking-[0.3em] text-amber/70">
-            {SERVICES[active].tag}
-          </span>
-          <h3 className="mt-3 font-display text-2xl font-black text-studio-silver md:text-4xl">
-            {SERVICES[active].title}
-          </h3>
-          <p className="mt-4 font-body text-base leading-relaxed text-studio-silver/65">
-            {SERVICES[active].desc}
-          </p>
-        </motion.div>
+        {current && (
+          <motion.div
+            key={safeActive}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 max-w-2xl"
+          >
+            <span className="font-mono text-[10px] tracking-[0.3em] text-amber/70">
+              {current.tag}
+            </span>
+            <h3 className="mt-3 font-display text-2xl font-black text-studio-silver md:text-4xl">
+              {current.title}
+            </h3>
+            <p className="mt-4 font-body text-base leading-relaxed text-studio-silver/65">
+              {current.desc}
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
