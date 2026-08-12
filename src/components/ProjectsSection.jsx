@@ -158,9 +158,25 @@ export default function ProjectsSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative z-10 aspect-video w-full overflow-hidden rounded-lg border border-studio-silver/10"
+            className="relative z-10 aspect-video w-full overflow-hidden rounded-lg"
           >
-            <MediaFrame project={project} animated />
+            <img
+              src={project.img}
+              alt={project.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <img
+              src={project.img}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 h-full w-full object-cover blur-md"
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at center, transparent 35%, black 80%)",
+                maskImage:
+                  "radial-gradient(ellipse at center, transparent 35%, black 80%)",
+              }}
+            />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/10 to-transparent" />
             <div className="absolute bottom-0 right-0 p-6 md:p-10">
               <span className="font-mono text-xs tracking-[0.3em] text-amber/80">
