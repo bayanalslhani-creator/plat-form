@@ -1,12 +1,9 @@
-const LOGO_IMG =
-  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/cd891c3be_image.png";
-
 export default function LogoTypeface({ className = "" }) {
   return (
-    <img
-      src={LOGO_IMG}
-      alt="Plat Form Media"
-      className={`h-auto w-auto object-contain ${className}`}
-    />
+    <span
+      className={`font-display font-black uppercase leading-none tracking-[0.06em] text-studio-silver ${className}`}
+    >
+      PLAT<span className="text-amber">·</span>FORM
+    </span>
   );
 }

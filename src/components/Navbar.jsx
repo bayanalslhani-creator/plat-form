@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LogoTypeface from "@/components/LogoTypeface";
 
+const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
+
 const NAV = [
   { label: "الرئيسية", href: "#home" },
   { label: "عننا", href: "#about" },
@@ -33,8 +35,9 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center">
-          <LogoTypeface className="h-10 w-auto" />
+        <Link to="/" className="flex items-center gap-2.5">
+          <img src={LOGO} alt="Plat Form Media" className="h-9 w-auto" />
+          <LogoTypeface className="text-xl" />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
