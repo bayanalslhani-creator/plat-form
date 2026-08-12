@@ -4,6 +4,9 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import LogoTypeface from "@/components/LogoTypeface";
 
+const LOGO =
+  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
+
 const SOCIALS = [
   {
     label: "Instagram",
@@ -64,7 +67,8 @@ export default function SiteFooter() {
         {/* info grid */}
         <div className="mt-24 grid grid-cols-1 gap-12 border-t border-studio-silver/10 py-16 md:grid-cols-3">
           <div>
-            <LogoTypeface className="h-9 w-auto" />
+            <img src={LOGO} alt="Plat Form Media" className="h-10 w-auto" />
+            <LogoTypeface className="mt-3 block text-2xl" />
             <p className="mt-4 font-body text-sm text-studio-silver/50">
               {footer.about_text}
             </p>
