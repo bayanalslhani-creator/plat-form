@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const SPLASH_VIDEO_URL =
-  "https://media.base44.com/videos/public/6a6f7ad42956b021bd3930bf/5ddbc3a61_animation.mp4";
+  "https://media.base44.com/videos/public/6a6f7ad42956b021bd3930bf/a02d7cdb7_whitelogo.mp4";
 
 export default function SplashScreen({ onFinish }) {
   const [exiting, setExiting] = useState(false);
@@ -14,7 +14,7 @@ export default function SplashScreen({ onFinish }) {
 
   // fallback in case onEnded never fires
   useEffect(() => {
-    const t = setTimeout(finish, 9000);
+    const t = setTimeout(finish, 12000);
     return () => clearTimeout(t);
   }, []);
 
