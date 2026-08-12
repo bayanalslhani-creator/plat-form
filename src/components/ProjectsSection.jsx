@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -6,6 +6,7 @@ const PROJECTS = [
   {
     title: "Evennees Cafe",
     tag: "إدارة وتسويق",
+    category: "تسويق",
     img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/7dc015088_1.jpg",
     about:
       "ضمن شراكة تسويقية مع كوفي إيفينس، تولّت منصة بلاتفورم إدارة الحسابات الرقمية والتصوير والتسويق، عبر تطوير استراتيجية محتوى مدروسة تعكس هوية العلامة وتقدّمها بصورة متناسقة، مع تخطيط سنوي يضمن حضورًا رقميًا مستمرًا ومحتوى بصري عالي الجودة.",
@@ -24,6 +25,7 @@ const PROJECTS = [
   {
     title: "Brewing Cafe",
     tag: "إطلاق علامة",
+    category: "تسويق",
     img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/70b58eb29_2.jpg",
     about:
       "شراكة تسويقية مع براوينق تولّت فيها منصتنا إدارة الحسابات الرقمية والتصوير والتسويق، من المراحل الأولى لتكوين العلامة، عبر استراتيجية محتوى سنوية تعزّز الهوية وتحفّز التفاعل.",
@@ -39,6 +41,7 @@ const PROJECTS = [
   {
     title: "Sarhah",
     tag: "إعلان بصري",
+    category: "إعلانات",
     img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/c94892e86_3.jpg",
     about:
       "تعاون إبداعي مع سرحه تولّت فيه منصتنا تطوير وتنفيذ مقطع إعلاني بصري يعكس جوهر العلامة ويترجم هويتها إلى تجربة مشاهدة أنيقة، قائمة على فكرة إبداعية مدروسة ولمسة إخراجية عالية.",
@@ -56,6 +59,7 @@ const PROJECTS = [
   {
     title: "King Abdulaziz Quality Award",
     tag: "فيديو تعريفي",
+    category: "وثائقي",
     img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/80c0a4806_4.jpg",
     about:
       "جائزة الملك عبد العزيز للجودة هي جائزة سعودية تهدف إلى تعزيز الجودة في مختلف القطاعات الحكومية والخاصة في المملكة العربية السعودية. أطلقت أمانة منطقة حائل فيديو تعريفيًا يُبرز مشاركتها في الدورة السابعة للجائزة لعام 2024.",
@@ -71,6 +75,7 @@ const PROJECTS = [
   {
     title: "Shdad",
     tag: "إعلان سردي",
+    category: "إعلانات",
     img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/e2e483d25_5.jpg",
     about:
       "في إطار حملة دعائية مبتكرة، تم إنتاج فيديو إعلاني لمحل الشاي شداد بالتعاون مع الراوي السعودي المعروف محمد الشهران، بهدف إيصال رسالة العلامة التجارية بطريقة عفوية وأصيلة، دون الإفصاح المباشر عن نوع النشاط.",
@@ -87,6 +92,8 @@ const PROJECTS = [
     linkLabel: "رابط المشاهدة",
   },
 ];
+
+const CATEGORIES = ["الكل", "تسويق", "إعلانات", "وثائقي"];
 
 function MediaFrame({ project, animated }) {
   if (project.videoUrl) {
@@ -125,11 +132,22 @@ function MediaFrame({ project, animated }) {
 }
 
 export default function ProjectsSection() {
+  const [category, setCategory] = useState("الكل");
   const [active, setActive] = useState(0);
   const [detail, setDetail] = useState(null);
   const detailProject = detail !== null ? PROJECTS[detail] : null;
   const scrollerRef = useRef(null);
   const cardRefs = useRef([]);
+
+  const items =
+    category === "الكل"
+      ? PROJECTS.map((p, i) => ({ p, i }))
+      : PROJECTS.map((p, i) => ({ p, i })).filter(({ p }) => p.category === category);
+
+  useEffect(() => {
+    setActive(0);
+    if (scrollerRef.current) scrollerRef.current.scrollLeft = 0;
+  }, [category]);
 
   const onScroll = useCallback(() => {
     const scroller = scrollerRef.current;
@@ -151,7 +169,7 @@ export default function ProjectsSection() {
   }, []);
 
   const scrollTo = (i) => {
-    const clamped = Math.max(0, Math.min(PROJECTS.length - 1, i));
+    const clamped = Math.max(0, Math.min(items.length - 1, i));
     cardRefs.current[clamped]?.scrollIntoView({
       behavior: "smooth",
       inline: "center",
@@ -174,6 +192,23 @@ export default function ProjectsSection() {
               أعمال <span className="text-amber">صنعتها</span> الكاميرا
             </h2>
           </div>
+        </div>
+
+        {/* category filter */}
+        <div className="no-scrollbar mb-10 flex gap-2 overflow-x-auto md:mb-14 md:justify-center">
+          {CATEGORIES.map((c) => (
+            <button
+              key={c}
+              onClick={() => setCategory(c)}
+              className={`shrink-0 rounded-full px-5 py-2 font-body text-sm tracking-wide transition-colors ${
+                category === c
+                  ? "bg-white text-black"
+                  : "border border-studio-silver/15 text-studio-silver/70 hover:text-studio-silver"
+              }`}
+            >
+              {c}
+            </button>
+          ))}
         </div>
 
         {/* horizontal poster carousel */}
@@ -202,13 +237,13 @@ export default function ProjectsSection() {
             onScroll={onScroll}
             className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-[14vw] pb-6 md:gap-8 md:px-[24vw]"
           >
-            {PROJECTS.map((p, i) => (
+            {items.map(({ p, i: origIdx }, idx) => (
               <button
-                key={i}
+                key={origIdx}
                 ref={(el) => {
-                  cardRefs.current[i] = el;
+                  cardRefs.current[idx] = el;
                 }}
-                onClick={() => setDetail(i)}
+                onClick={() => setDetail(origIdx)}
                 aria-label={p.title}
                 className="group relative h-[68vh] max-h-[680px] shrink-0 snap-center"
               >
@@ -233,11 +268,11 @@ export default function ProjectsSection() {
             <ChevronRight className="h-5 w-5" />
           </button>
           <span className="font-mono text-sm tracking-widest text-studio-silver/60">
-            <span className="text-amber">{String(active + 1).padStart(2, "0")}</span> / {String(PROJECTS.length).padStart(2, "0")}
+            <span className="text-amber">{String(active + 1).padStart(2, "0")}</span> / {String(items.length).padStart(2, "0")}
           </span>
           <button
             onClick={() => go(1)}
-            disabled={active === PROJECTS.length - 1}
+            disabled={active === items.length - 1}
             aria-label="التالي"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
           >
