@@ -107,4 +107,6 @@
   .bg-amber { background-color: #b7011a; }
   .text-amber { color: #b7011a; }
   .border-amber { border-color: #b7011a; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }

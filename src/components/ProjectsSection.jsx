@@ -6,7 +6,7 @@ const PROJECTS = [
   {
     title: "Evennees Cafe",
     tag: "إدارة وتسويق",
-    img: "https://platformm.sa/storage/media/f7147bf4-89a6-498a-9ec5-d1a8a9c44971.png",
+    img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/7dc015088_1.jpg",
     about:
       "ضمن شراكة تسويقية مع كوفي إيفينس، تولّت منصة بلاتفورم إدارة الحسابات الرقمية والتصوير والتسويق، عبر تطوير استراتيجية محتوى مدروسة تعكس هوية العلامة وتقدّمها بصورة متناسقة، مع تخطيط سنوي يضمن حضورًا رقميًا مستمرًا ومحتوى بصري عالي الجودة.",
     scope: [
@@ -24,7 +24,7 @@ const PROJECTS = [
   {
     title: "Brewing Cafe",
     tag: "إطلاق علامة",
-    img: "https://platformm.sa/storage/media/57e40624-c022-45a8-8d28-4b5042620881.png",
+    img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/70b58eb29_2.jpg",
     about:
       "شراكة تسويقية مع براوينق تولّت فيها منصتنا إدارة الحسابات الرقمية والتصوير والتسويق، من المراحل الأولى لتكوين العلامة، عبر استراتيجية محتوى سنوية تعزّز الهوية وتحفّز التفاعل.",
     scope: [
@@ -39,7 +39,7 @@ const PROJECTS = [
   {
     title: "Sarhah",
     tag: "إعلان بصري",
-    img: "https://platformm.sa/storage/media/3615275a-9ac9-429e-b75f-23930086ee12.png",
+    img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/c94892e86_3.jpg",
     about:
       "تعاون إبداعي مع سرحه تولّت فيه منصتنا تطوير وتنفيذ مقطع إعلاني بصري يعكس جوهر العلامة ويترجم هويتها إلى تجربة مشاهدة أنيقة، قائمة على فكرة إبداعية مدروسة ولمسة إخراجية عالية.",
     scope: [
@@ -56,7 +56,7 @@ const PROJECTS = [
   {
     title: "King Abdulaziz Quality Award",
     tag: "فيديو تعريفي",
-    img: "https://platformm.sa/storage/media/f85dc60b-5fa5-4c88-8833-6f77ab654d69.png",
+    img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/80c0a4806_4.jpg",
     about:
       "جائزة الملك عبد العزيز للجودة هي جائزة سعودية تهدف إلى تعزيز الجودة في مختلف القطاعات الحكومية والخاصة في المملكة العربية السعودية. أطلقت أمانة منطقة حائل فيديو تعريفيًا يُبرز مشاركتها في الدورة السابعة للجائزة لعام 2024.",
     scope: [
@@ -71,7 +71,7 @@ const PROJECTS = [
   {
     title: "Shdad",
     tag: "إعلان سردي",
-    img: "https://platformm.sa/storage/media/bb7a9a0e-9791-4f03-bce6-dfb972df6d0e.png",
+    img: "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/e2e483d25_5.jpg",
     about:
       "في إطار حملة دعائية مبتكرة، تم إنتاج فيديو إعلاني لمحل الشاي شداد بالتعاون مع الراوي السعودي المعروف محمد الشهران، بهدف إيصال رسالة العلامة التجارية بطريقة عفوية وأصيلة، دون الإفصاح المباشر عن نوع النشاط.",
     scope: [
@@ -125,15 +125,8 @@ function MediaFrame({ project, animated }) {
 }
 
 export default function ProjectsSection() {
-  const [active, setActive] = useState(0);
   const [detail, setDetail] = useState(null);
-  const project = PROJECTS[active];
   const detailProject = detail !== null ? PROJECTS[detail] : null;
-
-  const go = (dir) =>
-    setActive((a) =>
-      Math.max(0, Math.min(PROJECTS.length - 1, a + dir))
-    );
 
   return (
     <section id="projects" dir="rtl" className="relative bg-obsidian py-24 md:py-36">
@@ -150,92 +143,50 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* main animated showcase */}
-        <div className="relative mx-auto max-w-4xl">
-          <div className="pointer-events-none absolute -inset-8 rounded-full bg-amber/10 blur-3xl" />
-          <motion.div
-            key={active}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="relative z-10 aspect-video w-full overflow-hidden rounded-lg"
-          >
-            <img
-              src={project.img}
-              alt={project.title}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <img
-              src={project.img}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 h-full w-full object-cover blur-md"
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(ellipse at center, transparent 35%, black 80%)",
-                maskImage:
-                  "radial-gradient(ellipse at center, transparent 35%, black 80%)",
-              }}
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/10 to-transparent" />
-            <div className="absolute bottom-0 right-0 p-6 md:p-10">
-              <span className="font-mono text-xs tracking-[0.3em] text-amber/80">
-                {project.tag}
-              </span>
-              <h3 className="mt-2 font-display text-3xl font-black text-studio-silver md:text-5xl">
-                {project.title}
-              </h3>
-            </div>
-          </motion.div>
+        {/* horizontal poster carousel */}
+        <div className="relative">
+          {/* edge blur */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 backdrop-blur-md md:w-40"
+            style={{
+              WebkitMaskImage: "linear-gradient(to left, black, transparent)",
+              maskImage: "linear-gradient(to left, black, transparent)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 backdrop-blur-md md:w-40"
+            style={{
+              WebkitMaskImage: "linear-gradient(to right, black, transparent)",
+              maskImage: "linear-gradient(to right, black, transparent)",
+            }}
+          />
+          {/* edge fade */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-gradient-to-l from-obsidian to-transparent md:w-40" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-gradient-to-r from-obsidian to-transparent md:w-40" />
 
-          {/* arrows */}
-          <button
-            onClick={() => go(1)}
-            disabled={active === PROJECTS.length - 1}
-            className="absolute top-1/2 left-3 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-obsidian/60 text-studio-silver/70 backdrop-blur-sm transition-colors hover:border-amber hover:text-amber disabled:opacity-30 md:left-5"
-            aria-label="التالي"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-          <button
-            onClick={() => go(-1)}
-            disabled={active === 0}
-            className="absolute top-1/2 right-3 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-obsidian/60 text-studio-silver/70 backdrop-blur-sm transition-colors hover:border-amber hover:text-amber disabled:opacity-30 md:right-5"
-            aria-label="السابق"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
+          <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 md:gap-8">
+            {PROJECTS.map((p, i) => (
+              <button
+                key={i}
+                onClick={() => setDetail(i)}
+                aria-label={p.title}
+                className="group relative h-[72vh] max-h-[720px] shrink-0 snap-center"
+              >
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="h-full w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* page numbers */}
-        <div className="mt-8 flex items-center justify-center gap-2 md:gap-4">
-          {PROJECTS.map((p, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`font-mono text-sm tracking-widest transition-colors ${
-                i === active
-                  ? "text-amber"
-                  : "text-studio-silver/40 hover:text-studio-silver/70"
-              }`}
-            >
-              0{i + 1}
-            </button>
-          ))}
-        </div>
-
-        {/* active project brief */}
-        <div className="mx-auto mt-10 max-w-3xl text-center">
-          <p className="font-body text-base leading-relaxed text-studio-silver/65">
-            {project.about}
-          </p>
-          <button
-            onClick={() => setDetail(active)}
-            className="mt-8 inline-flex items-center gap-3 rounded-lg border border-amber/40 px-6 py-3 font-body text-sm tracking-wider text-amber transition-colors hover:bg-amber hover:text-white"
-          >
-            التفاصيل
-            <Play className="h-4 w-4 fill-current" />
-          </button>
+        {/* scroll hint */}
+        <div className="mt-2 flex items-center justify-center gap-2 text-studio-silver/30">
+          <ChevronRight className="h-4 w-4" />
+          <span className="font-mono text-[10px] tracking-[0.3em]">مرّر لاستعراض الأعمال</span>
+          <ChevronLeft className="h-4 w-4" />
         </div>
       </div>
 
