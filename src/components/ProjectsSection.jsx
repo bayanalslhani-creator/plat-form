@@ -223,16 +223,16 @@ export default function ProjectsSection() {
                   className="h-full w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 {/* text overlay */}
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-5 text-right md:p-8">
-                  <span className="block font-mono text-[10px] tracking-[0.3em] text-studio-silver/70">
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-3 text-right md:p-5">
+                  <span className="block font-mono text-[9px] tracking-[0.25em] text-studio-silver/70">
                     {p.tag}
                   </span>
-                  <span className="mt-1 block font-display text-2xl font-black text-white md:text-3xl">
+                  <span className="mt-0.5 block font-display text-base font-black leading-tight text-white md:text-xl">
                     {p.title}
                   </span>
-                  <span className="mt-2 inline-flex items-center gap-2 font-body text-xs tracking-wide text-amber">
+                  <span className="mt-1.5 inline-flex items-center gap-1.5 font-body text-[10px] tracking-wide text-amber">
                     لمعرفة المزيد
-                    <ChevronLeft className="h-3.5 w-3.5" />
+                    <ChevronLeft className="h-3 w-3" />
                   </span>
                 </span>
               </button>
