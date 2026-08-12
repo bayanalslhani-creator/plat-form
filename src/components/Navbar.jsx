@@ -52,7 +52,7 @@ export default function Navbar() {
 
         <Link
           to="/join"
-          className="rounded-lg border border-amber/40 px-5 py-2 font-body text-xs tracking-wider text-amber transition-colors hover:bg-amber hover:text-obsidian"
+          className="rounded-lg border border-amber/40 px-5 py-2 font-body text-xs tracking-wider text-amber transition-colors hover:bg-amber hover:text-white"
         >
           سجل معنا
         </Link>

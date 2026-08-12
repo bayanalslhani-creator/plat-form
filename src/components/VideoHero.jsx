@@ -57,7 +57,7 @@ export default function VideoHero() {
             onClick={() => setOpen(true)}
             className="group flex items-center gap-3 rounded-lg border border-studio-silver/25 bg-obsidian/30 px-7 py-4 backdrop-blur-sm transition-all hover:border-amber hover:bg-obsidian/50"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-obsidian transition-transform group-hover:scale-110">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-white transition-transform group-hover:scale-110">
               <Play className="h-4 w-4 fill-current" />
             </span>
             <span className="font-body text-base text-studio-silver">{hero.cta_play}</span>

@@ -60,7 +60,7 @@ export default function ServicesSection() {
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
                     isActive
-                      ? "bg-amber text-obsidian"
+                      ? "bg-amber text-white"
                       : "bg-studio-silver/5 text-studio-silver/50"
                   }`}
                 >

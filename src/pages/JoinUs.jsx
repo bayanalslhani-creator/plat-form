@@ -76,7 +76,7 @@ export default function JoinUs() {
             animate={{ opacity: 1, scale: 1 }}
             className="mt-14 flex flex-col items-center gap-6 border border-amber/30 bg-slate-container px-8 py-14 text-center"
           >
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-amber text-obsidian">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-amber text-white">
               <Check className="h-8 w-8" />
             </span>
             <h2 className="font-display text-2xl font-black text-studio-silver">
@@ -177,7 +177,7 @@ export default function JoinUs() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-amber md:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-transparent hover:text-amber md:w-auto"
               >
                 {status === "loading" ? (
                   <>
