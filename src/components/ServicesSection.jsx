@@ -55,7 +55,24 @@ export default function ServicesSection() {
         </div>
 
         {/* horizontal moving strip */}
-        <div className="flex snap-x items-stretch gap-3 overflow-x-auto pb-3 md:justify-center md:gap-4 [&::-webkit-scrollbar]:hidden">
+        <div className="relative">
+          <div className="no-scrollbar flex snap-x items-stretch gap-3 overflow-x-auto pb-3 md:justify-center md:gap-4">
+            <button
+              onClick={() => go(-1)}
+              disabled={safeActive === 0}
+              aria-label="السابق"
+              className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-studio-silver/15 bg-obsidian/80 text-studio-silver/70 backdrop-blur-sm transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => go(1)}
+              disabled={safeActive === services.length - 1}
+              aria-label="التالي"
+              className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-studio-silver/15 bg-obsidian/80 text-studio-silver/70 backdrop-blur-sm transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
           {services.map((s, i) => {
             const Icon = ICONS[s.icon] || Clapperboard;
             const isActive = i === safeActive;
@@ -94,26 +111,7 @@ export default function ServicesSection() {
               </button>
             );
           })}
-        </div>
-
-        {/* navigation arrows */}
-        <div className="mt-6 flex items-center justify-end gap-3">
-          <button
-            onClick={() => go(-1)}
-            disabled={safeActive === 0}
-            aria-label="السابق"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-          <button
-            onClick={() => go(1)}
-            disabled={safeActive === services.length - 1}
-            aria-label="التالي"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
+          </div>
         </div>
         {current && (
           <motion.div
