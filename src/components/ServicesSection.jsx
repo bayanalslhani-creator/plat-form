@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Clapperboard,
@@ -7,6 +7,8 @@ import {
   Share2,
   Palette,
   Megaphone,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
@@ -16,9 +18,20 @@ export default function ServicesSection() {
   const { content } = useSiteContent();
   const services = content.services.items;
   const [active, setActive] = useState(0);
+  const btnRefs = useRef([]);
 
   const safeActive = Math.min(active, services.length - 1);
   const current = services[safeActive] || services[0];
+
+  const go = (dir) => {
+    const next = Math.max(0, Math.min(services.length - 1, safeActive + dir));
+    setActive(next);
+    btnRefs.current[next]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  };
 
   return (
     <section
@@ -49,6 +62,9 @@ export default function ServicesSection() {
             return (
               <button
                 key={i}
+                ref={(el) => {
+                  btnRefs.current[i] = el;
+                }}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={`flex w-32 shrink-0 snap-start flex-col items-center gap-3 rounded-xl border px-4 py-6 text-center transition-all duration-500 md:w-36 ${
@@ -80,7 +96,25 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* active service detail */}
+        {/* navigation arrows */}
+        <div className="mt-6 flex items-center justify-end gap-3">
+          <button
+            onClick={() => go(-1)}
+            disabled={safeActive === 0}
+            aria-label="السابق"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+          <button
+            onClick={() => go(1)}
+            disabled={safeActive === services.length - 1}
+            aria-label="التالي"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+        </div>
         {current && (
           <motion.div
             key={safeActive}
