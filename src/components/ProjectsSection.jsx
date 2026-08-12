@@ -86,6 +86,21 @@ const PROJECTS = [
     link: "https://vimeo.com/1032864715",
     linkLabel: "رابط المشاهدة",
   },
+  {
+    title: "Plat Form Showreel",
+    tag: "عرض أعمال",
+    videoUrl:
+      "https://media.base44.com/videos/public/6a6f7ad42956b021bd3930bf/579bb70d1_IMG_6873.MP4",
+    about:
+      "لمحة من أعمال منصة بلاتفورم ميديا في مجال الإنتاج المرئي والتصوير، تجسّد لمسة الكاميرا وأسلوب الإخراج الذي يميّز أعمالنا.",
+    scope: [
+      "إنتاج وتصوير احترافي للمشاهد",
+      "إخراج بصري يعكس هوية العلامة",
+      "مونتاج ومكساج صوتي متقن",
+    ],
+    result:
+      "مقطع عرضي يلخّص رؤية المنصة وجودة أعمالها بصرياً.",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -123,11 +138,20 @@ export default function ProjectsSection() {
               </span>
               <div className="col-span-10 flex items-center gap-4 md:col-span-4 md:gap-6">
                 <div className="relative h-16 w-24 shrink-0 overflow-hidden border border-studio-silver/10 md:h-20 md:w-32">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {p.videoUrl ? (
+                    <video
+                      src={p.videoUrl}
+                      muted
+                      preload="metadata"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  ) : (
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  )}
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-black text-studio-silver md:text-2xl">
@@ -174,7 +198,13 @@ export default function ProjectsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 className="relative mb-8 aspect-video w-full overflow-hidden border border-studio-silver/10"
               >
-                {project.video ? (
+                {project.videoUrl ? (
+                  <video
+                    src={project.videoUrl}
+                    controls
+                    className="h-full w-full bg-black object-contain"
+                  />
+                ) : project.video ? (
                   <iframe
                     src={`https://player.vimeo.com/video/${project.video}`}
                     title={project.title}
