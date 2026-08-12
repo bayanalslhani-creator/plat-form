@@ -22,7 +22,7 @@ export default function SplashScreen({ onFinish }) {
     <AnimatePresence>
       {!exiting && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
@@ -33,7 +33,7 @@ export default function SplashScreen({ onFinish }) {
             muted
             playsInline
             onEnded={finish}
-            className="h-full w-full object-contain"
+            className="max-h-[40vh] max-w-[70vw] object-contain"
           />
         </motion.div>
       )}
