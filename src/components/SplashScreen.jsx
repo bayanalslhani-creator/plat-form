@@ -14,7 +14,7 @@ export default function SplashScreen({ onFinish }) {
 
   // fallback in case onEnded never fires
   useEffect(() => {
-    const t = setTimeout(finish, 12000);
+    const t = setTimeout(finish, 5000);
     return () => clearTimeout(t);
   }, []);
 
