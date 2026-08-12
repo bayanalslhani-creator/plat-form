@@ -119,7 +119,7 @@ function MediaFrame({ project, animated }) {
     <img
       src={project.img}
       alt={project.title}
-      className="h-full w-full object-cover"
+      className="h-full w-full bg-black object-contain"
     />
   );
 }
