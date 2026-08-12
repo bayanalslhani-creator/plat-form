@@ -151,13 +151,14 @@ export default function ProjectsSection() {
         </div>
 
         {/* main animated showcase */}
-        <div className="relative">
+        <div className="relative mx-auto max-w-4xl">
+          <div className="pointer-events-none absolute -inset-8 rounded-full bg-amber/10 blur-3xl" />
           <motion.div
             key={active}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative aspect-video w-full overflow-hidden border border-studio-silver/10"
+            className="relative z-10 aspect-video w-full overflow-hidden rounded-lg border border-studio-silver/10"
           >
             <MediaFrame project={project} animated />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/10 to-transparent" />
