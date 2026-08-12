@@ -31,9 +31,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Avenir Next", "Avenir", "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Avenir Next", "Avenir", "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Avenir Next", "Avenir", "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
