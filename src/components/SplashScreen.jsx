@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const SPLASH_VIDEO_URL =
-  "https://media.base44.com/videos/public/6a6f7ad42956b021bd3930bf/cbd06cc54_Logowhitegif.mp4";
+  "https://media.base44.com/videos/public/6a6f7ad42956b021bd3930bf/3a9fa6ab3_Logowhitegif.mp4";
 
 export default function SplashScreen({ onFinish }) {
   const [exiting, setExiting] = useState(false);
