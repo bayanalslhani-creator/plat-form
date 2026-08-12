@@ -225,7 +225,7 @@ export default function ProjectsSection() {
                 {/* top gradient */}
                 <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/40 to-transparent" />
                 {/* text overlay */}
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex h-1/4 items-end bg-gradient-to-t from-black/80 via-black/30 to-transparent p-3 text-right md:p-5">
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-3 text-right md:p-5">
                   <span className="block font-mono text-[9px] tracking-[0.25em] text-studio-silver/70">
                     {p.tag}
                   </span>
