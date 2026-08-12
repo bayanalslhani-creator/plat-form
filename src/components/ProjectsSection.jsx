@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -125,8 +125,41 @@ function MediaFrame({ project, animated }) {
 }
 
 export default function ProjectsSection() {
+  const [active, setActive] = useState(0);
   const [detail, setDetail] = useState(null);
   const detailProject = detail !== null ? PROJECTS[detail] : null;
+  const scrollerRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  const onScroll = useCallback(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const center =
+      scroller.getBoundingClientRect().left + scroller.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    cardRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const c = el.getBoundingClientRect().left + el.clientWidth / 2;
+      const d = Math.abs(c - center);
+      if (d < best) {
+        best = d;
+        nearest = i;
+      }
+    });
+    setActive(nearest);
+  }, []);
+
+  const scrollTo = (i) => {
+    const clamped = Math.max(0, Math.min(PROJECTS.length - 1, i));
+    cardRefs.current[clamped]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  };
+
+  const go = (dir) => scrollTo(active + dir);
 
   return (
     <section id="projects" dir="rtl" className="relative bg-obsidian py-24 md:py-36">
@@ -164,13 +197,20 @@ export default function ProjectsSection() {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-gradient-to-l from-obsidian to-transparent md:w-40" />
           <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-gradient-to-r from-obsidian to-transparent md:w-40" />
 
-          <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 md:gap-8">
+          <div
+            ref={scrollerRef}
+            onScroll={onScroll}
+            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-[14vw] pb-6 md:gap-8 md:px-[24vw]"
+          >
             {PROJECTS.map((p, i) => (
               <button
                 key={i}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
                 onClick={() => setDetail(i)}
                 aria-label={p.title}
-                className="group relative h-[72vh] max-h-[720px] shrink-0 snap-center"
+                className="group relative h-[68vh] max-h-[680px] shrink-0 snap-center"
               >
                 <img
                   src={p.img}
@@ -182,11 +222,27 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* scroll hint */}
-        <div className="mt-2 flex items-center justify-center gap-2 text-studio-silver/30">
-          <ChevronRight className="h-4 w-4" />
-          <span className="font-mono text-[10px] tracking-[0.3em]">مرّر لاستعراض الأعمال</span>
-          <ChevronLeft className="h-4 w-4" />
+        {/* position indicator + arrows */}
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <button
+            onClick={() => go(-1)}
+            disabled={active === 0}
+            aria-label="السابق"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+          <span className="font-mono text-sm tracking-widest text-studio-silver/60">
+            <span className="text-amber">{String(active + 1).padStart(2, "0")}</span> / {String(PROJECTS.length).padStart(2, "0")}
+          </span>
+          <button
+            onClick={() => go(1)}
+            disabled={active === PROJECTS.length - 1}
+            aria-label="التالي"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-studio-silver/15 bg-white/5 text-studio-silver/70 transition-colors hover:border-amber hover:text-amber disabled:opacity-30"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
         </div>
       </div>
 
