@@ -222,6 +222,8 @@ export default function ProjectsSection() {
                   alt={p.title}
                   className="h-full w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
+                {/* top gradient */}
+                <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/40 to-transparent" />
                 {/* text overlay */}
                 <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent p-3 text-right md:p-5">
                   <span className="block font-mono text-[9px] tracking-[0.25em] text-studio-silver/70">
