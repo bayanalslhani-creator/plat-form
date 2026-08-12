@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,700;1,6..12,300&family=Noto+Kufi+Arabic:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,28 +12,28 @@
     --card-foreground: 0 0% 88.6%;
     --popover: 240 3% 10.6%;
     --popover-foreground: 0 0% 88.6%;
-    --primary: 41 100% 50%;
-    --primary-foreground: 0 0% 3.1%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 240 3% 10.6%;
     --secondary-foreground: 0 0% 88.6%;
     --muted: 240 3% 10.6%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 41 100% 50%;
-    --accent-foreground: 0 0% 3.1%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 41 100% 50%;
+    --ring: 0 0% 100%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: "Tajawal", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Tajawal", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Archivo Black", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Nunito Sans", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -101,7 +103,8 @@
   .text-studio-silver { color: hsl(var(--foreground)); }
   .border-studio-silver { border-color: hsl(var(--foreground)); }
   .bg-slate-container { background-color: hsl(240 3% 7%); }
-  .bg-amber { background-color: hsl(var(--primary)); }
-  .text-amber { color: hsl(var(--primary)); }
-  .border-amber { border-color: hsl(var(--primary)); }
+  /* amber aliases now map to white per brand identity */
+  .bg-amber { background-color: #ffffff; }
+  .text-amber { color: #ffffff; }
+  .border-amber { border-color: #ffffff; }
 }
