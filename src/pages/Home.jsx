@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import LightLeak from "@/components/LightLeak";
 import VideoHero from "@/components/VideoHero";
@@ -12,18 +10,8 @@ import SiteFooter from "@/components/SiteFooter";
 import { SiteContentProvider } from "@/hooks/useSiteContent";
 
 export default function Home() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    document.body.style.overflow = showSplash ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showSplash]);
-
   return (
     <main className="bg-obsidian">
-      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <LightLeak />
       <Navbar />
       <SiteContentProvider>
