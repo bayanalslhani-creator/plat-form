@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
-const LOGO =
-  "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
+const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a59389754_.png";
 
 const SOCIALS = [
   {
@@ -125,7 +124,7 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} جميع الحقوق محفوظة
           </span>
           <div className="flex items-center gap-4">
-            <img src={LOGO} alt="Plat Form Media" className="h-8 w-auto" />
+            <img src={LOGO} alt="Plat Form Media" className="h-16 w-auto rounded-md mix-blend-screen" />
             <span className="h-6 w-px bg-studio-silver/15" />
             <div className="flex items-center gap-3">
               {SOCIALS.map((s) => (
