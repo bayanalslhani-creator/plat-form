@@ -32,9 +32,9 @@ export default function RegistrationsEditor() {
     try {
       await base44.entities.Registration.update(id, { status });
       setItems((arr) => arr.map((r) => (r.id === id ? { ...r, status } : r)));
-      toast({ title: "تم التحديث", description: STATUS_META[status].label });
+      toast({ title: "تم التحديث", description: STATUS_META[status].label, duration: 2000 });
     } catch (e) {
-      toast({ title: "خطأ", description: e.message, variant: "destructive" });
+      toast({ title: "خطأ", description: e.message, variant: "destructive", duration: 2000 });
     }
   };
 
