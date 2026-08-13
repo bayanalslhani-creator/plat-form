@@ -45,7 +45,7 @@ export default function JoinUs() {
   };
 
   return (
-    <main dir="rtl" className="relative min-h-screen overflow-hidden bg-obsidian pt-28 pb-20">
+    <main dir="rtl" className="relative min-h-screen overflow-hidden bg-obsidian pt-12 pb-20">
       <div className="absolute top-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-3xl px-6">
@@ -57,7 +57,7 @@ export default function JoinUs() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 text-center"
+          className="mt-8 text-center"
         >
           <span className="font-mono text-xs tracking-[0.4em] text-amber">
             انضم إلى الفريق
@@ -99,7 +99,7 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2"
+            className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2"
           >
             <div>
               <label className="mb-2 block font-mono text-[11px] tracking-[0.2em] text-studio-silver/50">
