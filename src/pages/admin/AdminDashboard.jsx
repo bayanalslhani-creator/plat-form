@@ -7,7 +7,7 @@ import ServicesEditor from "@/components/admin/editors/ServicesEditor";
 import StatsEditor from "@/components/admin/editors/StatsEditor";
 import FooterEditor from "@/components/admin/editors/FooterEditor";
 import RegistrationsEditor from "@/components/admin/editors/RegistrationsEditor";
-import { LayoutDashboard, LogOut, ExternalLink } from "lucide-react";
+import { LayoutDashboard, LogOut, ExternalLink, Menu, X } from "lucide-react";
 
 const LOGO =
   "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
@@ -23,7 +23,12 @@ const TABS = [
 
 export default function AdminDashboard() {
   const [active, setActive] = useState("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
   const ActiveEditor = TABS.find((t) => t.id === active)?.Editor || HeroEditor;
+  const select = (id) => {
+    setActive(id);
+    setMenuOpen(false);
+  };
 
   const handleLogout = () => base44.auth.logout("/admin/login");
 
@@ -38,6 +43,12 @@ export default function AdminDashboard() {
             </span>
           </div>
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex items-center gap-2 rounded-lg border border-studio-silver/15 px-4 py-2 font-body text-xs text-studio-silver/70 transition-colors hover:border-amber hover:text-amber"
+            >
+              {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />} الأقسام
+            </button>
             <Link
               to="/"
               target="_blank"
@@ -56,26 +67,28 @@ export default function AdminDashboard() {
       </header>
 
       <div className="mx-auto flex max-w-6xl gap-8 px-6 py-10">
-        <aside className="w-48 shrink-0">
-          <div className="mb-4 flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-studio-silver/40">
-            <LayoutDashboard className="h-3 w-3" /> الأقسام
-          </div>
-          <nav className="space-y-1">
-            {TABS.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setActive(t.id)}
-                className={`block w-full rounded-lg px-4 py-2.5 text-right font-body text-sm transition-colors ${
-                  active === t.id
-                    ? "bg-amber/10 text-amber"
-                    : "text-studio-silver/60 hover:bg-slate-container hover:text-studio-silver"
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </nav>
-        </aside>
+        {menuOpen && (
+          <aside className="w-48 shrink-0">
+            <div className="mb-4 flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-studio-silver/40">
+              <LayoutDashboard className="h-3 w-3" /> الأقسام
+            </div>
+            <nav className="space-y-1">
+              {TABS.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => select(t.id)}
+                  className={`block w-full rounded-lg px-4 py-2.5 text-right font-body text-sm transition-colors ${
+                    active === t.id
+                      ? "bg-amber/10 text-amber"
+                      : "text-studio-silver/60 hover:bg-slate-container hover:text-studio-silver"
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </nav>
+          </aside>
+        )}
 
         <main className="flex-1">
           <h1 className="mb-6 font-display text-2xl font-black text-studio-silver">
