@@ -66,8 +66,8 @@ export default function SiteFooter() {
         {/* info grid */}
         <div className="mt-24 grid grid-cols-1 gap-12 border-t border-studio-silver/10 py-16 md:grid-cols-3">
           <div>
-            <img src={LOGO} alt="Plat Form Media" className="h-10 w-auto" />
-            <p className="mt-4 font-body text-sm text-studio-silver/50">
+            <h4 className="font-mono text-xs tracking-[0.3em] text-studio-silver/40">من نحن</h4>
+            <p className="mt-5 font-body text-sm leading-relaxed text-studio-silver/50">
               {footer.about_text}
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function SiteFooter() {
             <h4 className="font-mono text-xs tracking-[0.3em] text-studio-silver/40">
               معلومات التواصل
             </h4>
-            <ul className="mt-5 space-y-4">
+            <ul className="mt-5 space-y-3">
               <li
                 className="flex items-center gap-3 font-body text-sm text-studio-silver/65"
                 dir="ltr"
@@ -120,25 +120,29 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-5 border-t border-studio-silver/10 py-8 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-6 border-t border-studio-silver/10 py-8 md:flex-row md:justify-between">
           <span className="font-mono text-[10px] tracking-[0.3em] text-studio-silver/30">
             © {new Date().getFullYear()} جميع الحقوق محفوظة
           </span>
-          <div className="flex items-center gap-3">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-studio-silver/15 text-studio-silver/60 transition-colors hover:border-amber hover:text-amber"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-                  <path d={s.path} />
-                </svg>
-              </a>
-            ))}
+          <div className="flex items-center gap-4">
+            <img src={LOGO} alt="Plat Form Media" className="h-8 w-auto" />
+            <span className="h-6 w-px bg-studio-silver/15" />
+            <div className="flex items-center gap-3">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-studio-silver/15 text-studio-silver/60 transition-colors hover:border-amber hover:text-amber"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                    <path d={s.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
