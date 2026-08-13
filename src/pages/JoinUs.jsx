@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 
-const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/e53489781_.jpg";
+import LogoMark from "@/components/LogoMark";
 
 const INTERESTS = [
   "التصوير الفوتوغرافي",
@@ -50,7 +50,7 @@ export default function JoinUs() {
 
       <div className="relative mx-auto max-w-3xl px-6">
         <Link to="/" className="inline-flex items-center">
-          <img src={LOGO} alt="Plat Form Media" className="h-20 w-auto rounded-md mix-blend-screen" />
+          <LogoMark className="h-20 w-auto" />
         </Link>
 
         <motion.div
