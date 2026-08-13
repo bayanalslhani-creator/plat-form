@@ -284,9 +284,13 @@ export default function ProjectsSection() {
                 <X className="h-7 w-7" />
               </button>
 
-              <div className="relative mb-8 aspect-video w-full overflow-hidden border border-studio-silver/10">
-                <MediaFrame project={detailProject} animated={false} />
-              </div>
+              {detailProject.video || detailProject.videoUrl ? (
+                <div className="relative mb-8 aspect-video w-full overflow-hidden">
+                  <MediaFrame project={detailProject} animated={false} />
+                </div>
+              ) : (
+                <img src={detailProject.img} alt={detailProject.title} className="mb-8 block h-auto w-full" />
+              )}
 
               <span className="font-mono text-xs tracking-[0.3em] text-amber/70">{detailProject.tag}</span>
               <h3 className="mt-3 font-display text-3xl font-black text-studio-silver md:text-5xl">
@@ -324,7 +328,7 @@ export default function ProjectsSection() {
                   href={detailProject.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center gap-3 rounded-lg border border-amber bg-amber px-6 py-3 font-body text-sm tracking-wider text-white transition-colors hover:bg-transparent hover:text-amber"
+                  className="mt-8 inline-flex items-center gap-3 rounded-lg border border-white bg-white px-6 py-3 font-body text-sm tracking-wider text-obsidian transition-colors hover:bg-transparent hover:text-white"
                 >
                   <Play className="h-4 w-4 fill-current" />
                   {detailProject.linkLabel}

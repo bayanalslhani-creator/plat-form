@@ -177,7 +177,7 @@ export default function JoinUs() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-transparent hover:text-amber md:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-white bg-white px-8 py-4 font-body text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-white md:w-auto"
               >
                 {status === "loading" ? (
                   <>

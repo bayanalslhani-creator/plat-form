@@ -57,7 +57,7 @@ export default function SiteFooter() {
           </p>
           <Link
             to="/join"
-            className="mt-10 inline-flex items-center gap-3 rounded-lg border border-amber bg-amber px-8 py-4 font-body text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-transparent hover:text-amber"
+            className="mt-10 inline-flex items-center gap-3 rounded-lg border border-white bg-white px-8 py-4 font-body text-sm font-bold tracking-wider text-obsidian transition-all duration-300 hover:bg-transparent hover:text-white"
           >
             {footer.cta_button}
             <span className="h-px w-6 bg-current" />
