@@ -34,7 +34,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={LOGO} alt="Plat Form Media" className="h-20 w-auto rounded-md mix-blend-screen" />
+          <img src={LOGO} alt="Plat Form Media" className="h-16 w-auto -mt-3 rounded-md mix-blend-screen" />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
