@@ -183,21 +183,6 @@ export default function ProjectsSection() {
 
         {/* horizontal poster carousel */}
         <div className="relative">
-          {/* edge blur */}
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 backdrop-blur-md md:w-40"
-            style={{
-              WebkitMaskImage: "linear-gradient(to left, black, transparent)",
-              maskImage: "linear-gradient(to left, black, transparent)",
-            }}
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 backdrop-blur-md md:w-40"
-            style={{
-              WebkitMaskImage: "linear-gradient(to right, black, transparent)",
-              maskImage: "linear-gradient(to right, black, transparent)",
-            }}
-          />
           {/* edge fade */}
           <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-gradient-to-l from-obsidian to-transparent md:w-40" />
           <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-gradient-to-r from-obsidian to-transparent md:w-40" />
