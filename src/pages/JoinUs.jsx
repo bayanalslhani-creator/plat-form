@@ -50,7 +50,7 @@ export default function JoinUs() {
 
       <div className="relative mx-auto max-w-3xl px-6">
         <Link to="/" className="inline-flex items-center">
-          <img src={LOGO} alt="Plat Form Media" className="h-14 w-auto rounded-md mix-blend-screen" />
+          <img src={LOGO} alt="Plat Form Media" className="h-20 w-auto rounded-md mix-blend-screen" />
         </Link>
 
         <motion.div
