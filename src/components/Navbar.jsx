@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/e53489781_.jpg";
+const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a59389754_.png";
 
 const NAV = [
   { label: "الرئيسية", href: "#home" },

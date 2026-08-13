@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 
-const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/e53489781_.jpg";
+const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a59389754_.png";
 
 const INTERESTS = [
   "التصوير الفوتوغرافي",
