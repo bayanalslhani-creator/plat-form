@@ -9,8 +9,8 @@ function StatCard({ stat, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex min-h-[230px] flex-col overflow-hidden border border-studio-silver/10 bg-slate-container p-8 transition-colors duration-500 hover:border-amber/30 md:p-10"
-    >
+      className="group relative flex min-h-[230px] flex-col overflow-hidden border border-studio-silver/10 bg-slate-container p-8 transition-colors duration-500 hover:border-amber/30 md:p-10">
+      
       <span className="absolute left-3 top-3 h-4 w-4 border-l border-t border-amber/40" />
       <span className="absolute right-3 top-3 h-4 w-4 border-r border-t border-amber/40" />
       <span className="absolute bottom-3 left-3 h-4 w-4 border-b border-l border-amber/40" />
@@ -32,8 +32,8 @@ function StatCard({ stat, index }) {
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-amber/[0.04] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-    </motion.div>
-  );
+    </motion.div>);
+
 }
 
 export default function StatsSection() {
@@ -44,18 +44,18 @@ export default function StatsSection() {
     <section id="stats" dir="rtl" className="relative bg-obsidian py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 md:mb-20">
-          <span className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] text-amber">
+          <span className="flex items-center gap-3 text-xs tracking-[0.4em] text-amber [font-family:'GE_SS_Two',_sans-serif] font-medium">
             <span className="h-px w-8 bg-amber/60" />
             أرقام بلاتفورم
           </span>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((stat, i) => (
-            <StatCard key={i} stat={stat} index={i} />
-          ))}
+          {stats.map((stat, i) =>
+          <StatCard key={i} stat={stat} index={i} />
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
