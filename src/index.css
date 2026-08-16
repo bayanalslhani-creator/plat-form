@@ -28,6 +28,7 @@
   font-style: normal;
   font-display: swap;
   src: url('./assets/fonts/ge-ss-two-d299093d-500-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+061C, U+200C-200D;
 }
 @font-face {
   font-family: 'GE SS Two';
@@ -35,6 +36,7 @@
   font-style: normal;
   font-display: swap;
   src: url('./assets/fonts/ge-ss-two-d299093d-300-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+061C, U+200C-200D;
 }
 /* base44-workspace-fonts:end */
 
@@ -76,9 +78,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -140,11 +142,11 @@
 
   body {
     @apply bg-background text-foreground font-body;
-    font-family: "MyCustomAvenir" !important;
+    font-family: "GE SS Two", "MyCustomAvenir" !important;
   }
 
   * {
-    font-family: "MyCustomAvenir" !important;
+    font-family: "GE SS Two", "MyCustomAvenir" !important;
   }
 
   .bg-obsidian { background-color: hsl(var(--background)); }
