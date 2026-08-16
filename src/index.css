@@ -13,6 +13,13 @@
   font-display: swap;
   src: url('./assets/fonts/avenir-65-medium-7c2cff93-500-italic.woff2') format('woff2');
 }
+@font-face {
+  font-family: '29LT Zarid Slab';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/29-lt-zarid-slab-b95a831f-900-normal.woff2') format('woff2');
+}
 /* base44-workspace-fonts:end */
 
 @font-face {
