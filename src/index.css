@@ -6,6 +6,13 @@
   font-display: swap;
   src: url('./assets/fonts/avenir-55-roman-0652dbbe-400-normal.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Avenir 55 Roman';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('./assets/fonts/avenir-55-roman-0652dbbe-400-italic.woff2') format('woff2');
+}
 /* base44-workspace-fonts:end */
 
 @font-face {
