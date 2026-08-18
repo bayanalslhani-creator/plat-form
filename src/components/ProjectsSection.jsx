@@ -84,11 +84,9 @@ export default function ProjectsSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-col items-start gap-4 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="flex items-center gap-3 font-mono tracking-[0.4em] text-studio-silver text-lg md:text-xl">
-              <span className="h-px w-8 bg-amber/60" />
-              مشاريعنا الأخيرة
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
+            <span className="block h-px w-8 bg-amber/60" />
+            <span className="mt-4 block font-mono tracking-[0.4em] text-studio-silver text-lg md:text-xl">مشاريعنا الأخيرة</span>
+            <h2 className="mt-3 font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
               أعمال <span className="text-amber">صنعتها</span> الكاميرا
             </h2>
           </div>
