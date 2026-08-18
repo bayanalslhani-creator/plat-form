@@ -206,10 +206,14 @@
   body {
     @apply bg-background text-foreground font-body;
     font-family: "SF Arabic", "MyCustomAvenir" !important;
+    font-synthesis: none !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   * {
     font-family: "SF Arabic", "MyCustomAvenir" !important;
+    font-synthesis: none !important;
   }
 
   .bg-obsidian { background-color: hsl(var(--background)); }
