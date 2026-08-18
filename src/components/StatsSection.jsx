@@ -44,7 +44,7 @@ export default function StatsSection() {
     <section id="stats" dir="rtl" className="relative bg-obsidian py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 md:mb-20">
-          <span className="flex items-center gap-3 text-xs tracking-[0.4em] text-amber [font-family:'SF_Arabic',_sans-serif] font-medium">
+          <span className="flex items-center gap-3 tracking-[0.4em] text-amber [font-family:'SF_Arabic',_sans-serif] font-medium text-xl">
             <span className="h-px w-8 bg-amber/60" />
             أرقام بلاتفورم
           </span>
