@@ -8,6 +8,7 @@ import StatsEditor from "@/components/admin/editors/StatsEditor";
 import FooterEditor from "@/components/admin/editors/FooterEditor";
 import RegistrationsEditor from "@/components/admin/editors/RegistrationsEditor";
 import ProjectsEditor from "@/components/admin/editors/ProjectsEditor";
+import FontSettingsEditor from "@/components/admin/editors/FontSettingsEditor";
 import { LayoutDashboard, LogOut, ExternalLink, Menu, X } from "lucide-react";
 
 const LOGO =
@@ -20,6 +21,7 @@ const TABS = [
   { id: "stats", label: "الأرقام", Editor: StatsEditor },
   { id: "projects", label: "المشاريع", Editor: ProjectsEditor },
   { id: "footer", label: "الفوتر", Editor: FooterEditor },
+  { id: "font", label: "الخط", Editor: FontSettingsEditor },
   { id: "registrations", label: "الطلبات", Editor: RegistrationsEditor },
 ];
 

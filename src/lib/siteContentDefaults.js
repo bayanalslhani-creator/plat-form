@@ -185,6 +185,12 @@ export const DEFAULT_CONTENT = {
       },
     ],
   },
+  font: {
+    family: "SF Arabic",
+    base_size: 16,
+    text_color: "#E3E3E3",
+    accent_color: "#b7011a",
+  },
   footer: {
     cta_eyebrow: "READY FOR PRODUCTION?",
     cta_heading_line1: "انضم لفريق",
