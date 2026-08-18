@@ -47,7 +47,7 @@ export default function SiteFooter() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <span className="font-mono text-xs tracking-[0.4em] text-amber/70">
+          <span className="font-mono text-xs tracking-[0.4em] text-studio-silver/70">
             {footer.cta_eyebrow}
           </span>
           <h2 className="mt-6 font-display text-4xl font-black leading-tight text-studio-silver transition-colors duration-300 hover:text-amber md:text-7xl lg:text-8xl">

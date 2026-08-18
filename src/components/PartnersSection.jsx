@@ -12,9 +12,8 @@ export default function PartnersSection() {
     <section id="partners" dir="rtl" className="relative bg-obsidian py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
-          <span className="font-mono tracking-[0.4em] text-amber text-base">شركاء بلاتفورم</span>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
-            شراكة نحو <span className="text-amber">المستقبل</span>
+          <h2 className="font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
+            شركاء <span className="text-amber">بلاتفورم</span>
           </h2>
           <p className="mt-6 font-body text-base leading-relaxed text-studio-silver/60">
             في مؤسسة بلاتفورم، نعتبر شراكتنا معكم خطوة أساسية نحو تحقيق أهدافنا المشتركة.

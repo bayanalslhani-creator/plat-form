@@ -41,7 +41,7 @@ export default function ServicesSection() {
       
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-3xl md:mb-16">
-          <span className="flex items-center gap-3 font-mono tracking-[0.4em] text-amber text-base">
+          <span className="flex items-center gap-3 font-mono tracking-[0.4em] text-studio-silver text-base">
             <span className="h-px w-8 bg-amber/60" />
             خدماتنا
           </span>

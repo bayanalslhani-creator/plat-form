@@ -84,7 +84,7 @@ export default function ProjectsSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-col items-start gap-4 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="flex items-center gap-3 font-mono tracking-[0.4em] text-amber text-base">
+            <span className="flex items-center gap-3 font-mono tracking-[0.4em] text-studio-silver text-base">
               <span className="h-px w-8 bg-amber/60" />
               مشاريعنا الأخيرة
             </span>

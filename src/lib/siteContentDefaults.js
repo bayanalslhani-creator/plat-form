@@ -187,7 +187,7 @@ export const DEFAULT_CONTENT = {
   },
   footer: {
     cta_eyebrow: "READY FOR PRODUCTION?",
-    cta_heading_line1: "انضم لمجتمع",
+    cta_heading_line1: "انضم لفريق",
     cta_heading_line2: "بلاتفورم ميديا",
     cta_paragraph:
       "إن كنت ترغب في الانضمام إلى فريقنا أو التعرف علينا بشكل أعمق، فسيشرفنا تواصلك معنا.",
