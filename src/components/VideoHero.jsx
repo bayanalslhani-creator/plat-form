@@ -40,7 +40,7 @@ export default function VideoHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl leading-[1.05] text-studio-silver sm:text-6xl md:text-7xl lg:text-8xl [font-family:'GE_SS_Two',_sans-serif] font-light">
+          className="text-5xl leading-[1.05] text-studio-silver sm:text-6xl md:text-7xl lg:text-8xl [font-family:'SF_Arabic',_sans-serif] font-extralight">
           
           {hero.title_pre}
           <br />
