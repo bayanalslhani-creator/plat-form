@@ -45,6 +45,13 @@
   font-display: swap;
   src: url('./assets/fonts/sf-arabic-be7c3d3a-200-normal.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/ad2fd37ff_sf-arabic-regular.otf') format('opentype');
+}
 /* base44-workspace-fonts:end */
 
 @font-face {
@@ -85,9 +92,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "GE SS Two", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "SF Arabic", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "SF Arabic", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "SF Arabic", "MyCustomAvenir", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -149,11 +156,11 @@
 
   body {
     @apply bg-background text-foreground font-body;
-    font-family: "GE SS Two", "MyCustomAvenir" !important;
+    font-family: "SF Arabic", "MyCustomAvenir" !important;
   }
 
   * {
-    font-family: "GE SS Two", "MyCustomAvenir" !important;
+    font-family: "SF Arabic", "MyCustomAvenir" !important;
   }
 
   .bg-obsidian { background-color: hsl(var(--background)); }
