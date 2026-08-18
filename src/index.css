@@ -73,34 +73,7 @@
   font-display: swap;
   src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/a054c5514_sf-arabic-medium.otf') format('opentype');
 }
-@font-face {
-  font-family: 'SF Arabic';
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/020a7f1a9_sf-arabic-semibold.otf') format('opentype');
-}
-@font-face {
-  font-family: 'SF Arabic';
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/76982b8d6_sf-arabic-bold.otf') format('opentype');
-}
-@font-face {
-  font-family: 'SF Arabic';
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/845779a69_sf-arabic-heavy.otf') format('opentype');
-}
-@font-face {
-  font-family: 'SF Arabic';
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/54bcbf8a9_sf-arabic-black.otf') format('opentype');
-}
+
 /* base44-workspace-fonts:end */
 
 @font-face {
