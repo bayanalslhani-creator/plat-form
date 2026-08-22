@@ -122,13 +122,13 @@ export default function ProjectsSection() {
                 <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/40 to-transparent" />
                 {/* text overlay */}
                 <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-3 text-right md:p-5">
-                  <span className="block font-mono text-[9px] tracking-[0.25em] text-studio-silver/70">
+                  <span className="block font-mono text-[9px] tracking-[0.25em] text-white">
                     {p.tag}
                   </span>
-                  <span className="mt-0.5 block font-display text-base font-black leading-tight text-white md:text-xl">
+                  <span className="mt-1 block font-display text-xl font-black leading-tight text-white md:text-3xl">
                     {p.title}
                   </span>
-                  <span className="mt-1.5 inline-flex items-center gap-1.5 font-body text-[9px] tracking-wide text-white">
+                  <span className="mt-2 inline-flex items-center gap-1.5 font-body text-[10px] tracking-wide text-white">
                     لمعرفة المزيد
                     <ChevronLeft className="h-3 w-3" />
                   </span>
