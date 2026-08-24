@@ -92,7 +92,48 @@
   font-display: swap;
   src: url('https://base44.app/api/apps/68f7942ed453646e397708fb/files/mp/public/68f7942ed453646e397708fb/4bf3b883a_sf-compact-text-italic-58646f7cbab10.otf') format('opentype');
 }
-
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-900-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-200-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-100-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Arabic';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/sf-arabic-be7c3d3a-700-normal.woff2') format('woff2');
+}
 /* base44-workspace-fonts:end */
 
 @font-face {
