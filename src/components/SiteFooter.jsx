@@ -50,7 +50,7 @@ export default function SiteFooter() {
           <span className="font-mono text-xs tracking-[0.4em] text-studio-silver/70">
             {footer.cta_eyebrow}
           </span>
-          <h2 className="mt-6 text-4xl font-black leading-tight text-studio-silver transition-colors duration-300 hover:text-amber md:text-7xl lg:text-8xl opacity-100 [font-family:'SF_Arabic',_\"SF_Compact\",_\"MyCustomAvenir\",_ui-sans-serif,_system-ui,_sans-serif]">
+          <h2 className="mt-6 font-display text-4xl font-black leading-tight text-studio-silver transition-colors duration-300 hover:text-amber md:text-7xl lg:text-8xl">
             {footer.cta_heading_line1}
             <br />
             {footer.cta_heading_line2}
