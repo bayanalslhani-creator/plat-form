@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock, Mail, Loader2 } from "lucide-react";
+import {link} from "react-router-dom";
 
 const LOGO =
   "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
@@ -86,13 +87,13 @@ export default function AdminLogin() {
     />
   </div>
   <div className="flex justify-end pt-1">
-    <button
+    <link
       type="button"
-      onClick={handleForgotPassword}
+      to="/forgot-password"
       className="text-xs text-studio-silver/70 hover:text-studio-silver transition-colors underline cursor-pointer"
     >
       نسيت كلمة المرور؟
-    </button>
+    </link>
   </div>
 </div>
  
