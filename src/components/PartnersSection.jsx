@@ -30,7 +30,8 @@ export default function PartnersSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: i % 6 * 0.06 }}
-            className="flex aspect-[3/2] items-center justify-center bg-slate-container p-5 transition-colors hover:bg-obsidian">
+            className="flex aspect-[3/2] items-center justify-center bg-obsidian p-5 transition-colors hover:bg-stale-container
+            ">
             
               <img
               src={`${BASE}${id}.png${id === "003" ? "?v=1" : ""}`}
