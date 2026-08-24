@@ -195,7 +195,7 @@ export default function ProjectsSection() {
 
               <div className="mt-8">
                 <h4 className="font-display font-black text-white text-3xl">عن العمل</h4>
-                <p className="mt-3 font-body text-base leading-relaxed text-white/90">
+                <p className="mt-3 text-base leading-relaxed text-white/90 [font-family:'SF_Arabic',_\"SF_Compact\",_\"MyCustomAvenir\",_ui-sans-serif,_system-ui,_sans-serif]">
                   {detailProject.about}
                 </p>
               </div>
