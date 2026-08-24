@@ -175,7 +175,7 @@ export default function ProjectsSection() {
             <div className="mx-auto max-w-5xl px-6 py-20" onClick={(e) => e.stopPropagation()}>
               <button
               onClick={() => setDetail(null)}
-              className="absolute right-6 top-6 text-studio-silver/60 hover:text-amber">
+              className="absolute right-6 top-6 text-studio-silver/60 hover:text-white">
               
                 <X className="h-7 w-7" />
               </button>
@@ -188,23 +188,23 @@ export default function ProjectsSection() {
             <img src={detailProject.img} alt={detailProject.title} className="mb-8 block h-auto w-full" />
             }
 
-              <span className="font-mono text-xs tracking-[0.3em] text-amber/70">{detailProject.tag}</span>
-              <h3 className="mt-3 font-display text-3xl font-black text-studio-silver md:text-5xl">
+              <span className="font-mono text-xs tracking-[0.3em] text-white/70">{detailProject.tag}</span>
+              <h3 className="mt-3 font-display text-4xl font-black text-white md:text-6xl">
                 {detailProject.title}
               </h3>
 
               <div className="mt-8">
-                <h4 className="font-display text-lg font-black text-amber">عن العمل</h4>
-                <p className="mt-3 font-body text-base leading-relaxed text-studio-silver/70">
+                <h4 className="font-display text-2xl font-black text-white ">عن العمل</h4>
+                <p className="mt-3 font-body text-base leading-relaxed text-white/90">
                   {detailProject.about}
                 </p>
               </div>
 
               <div className="mt-8">
-                <h4 className="font-display text-lg font-black text-amber">المطلوب للمشروع</h4>
+                <h4 className="font-display text-2xl font-black text-white">المطلوب للمشروع</h4>
                 <ul className="mt-3 space-y-2">
                   {detailProject.scope.map((s, idx) =>
-                <li key={idx} className="flex items-start gap-3 font-body text-studio-silver/70">
+                <li key={idx} className="flex items-start gap-3 font-body text-white /90">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-amber" />
                       {s}
                     </li>
