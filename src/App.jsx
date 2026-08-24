@@ -11,6 +11,7 @@ import JoinUs from '@/pages/JoinUs';
 import AdminLogin from '@/pages/admin/AdminLogin';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
 import AdminRoute from '@/components/admin/AdminRoute';
+import ForgotPassword from "./pages/ForgotPassword";
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -45,6 +46,7 @@ const AuthenticatedApp = () => {
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route element={<AdminRoute />}>
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path ="/forgot-password" element={<ForgotPassword/>}/>
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
