@@ -13,7 +13,7 @@ export default function PartnersSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
           <h2 className="font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
-            شركاء <span className="text-amber">بلاتفورم</span>
+            شركاء <span className="text-white">بلاتفورم</span>
           </h2>
           <p className="mt-6 font-body text-base leading-relaxed text-studio-silver/60">
             في مؤسسة بلاتفورم، نعتبر شراكتنا معكم خطوة أساسية نحو تحقيق أهدافنا المشتركة.
