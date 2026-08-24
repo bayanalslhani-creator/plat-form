@@ -213,7 +213,7 @@ export default function ProjectsSection() {
               </div>
 
               <div className="mt-8">
-                <h4 className="font-display text-lg font-black text-white">النتيجة</h4>
+                <h4 className="font-display font-black text-white text-2xl">النتيجة</h4>
                 <p className="mt-3 font-body text-base leading-relaxed text-studio-silver/70">
                   {detailProject.result}
                 </p>
