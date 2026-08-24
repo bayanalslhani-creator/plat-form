@@ -120,7 +120,20 @@ export default function ProjectsEditor() {
             <TextField label="العنوان" value={p.title} onChange={(v) => update(i, "title", v)} />
             <TextField label="التصنيف (tag)" value={p.tag} onChange={(v) => update(i, "tag", v)} />
           </div>
-          <TextField label="رابط الصورة" value={p.img} onChange={(v) => update(i, "img", v)} />
+          <div className="space-y-2">
+  <label className="text-studio-silver/60 text-xs">رفع الصورة</label>
+  <input
+    type="file"
+    accept="image/*"
+    onChange={(e) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        set("image")(file);
+      }
+    }}
+    className="w-full text-xs text-studio-silver bg-slate-container border border-studio-silver/15 rounded p-2 file:bg-studio-silver/20 file:text-studio-silver file:border-0 file:rounded file:px-3 file:py-1 file:ml-3 hover:file:bg-studio-silver/30 cursor-pointer"
+  />
+</div>
           <TextAreaField label="عن العمل" value={p.about} onChange={(v) => update(i, "about", v)} rows={3} />
 
           <div className="space-y-2">
