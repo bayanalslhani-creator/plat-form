@@ -14,6 +14,10 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleForgotPassword = () => {
+    window.location.href = "/forgot-password";
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
