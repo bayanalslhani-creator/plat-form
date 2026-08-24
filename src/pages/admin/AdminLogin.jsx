@@ -95,15 +95,7 @@ export default function AdminLogin() {
     </button>
   </div>
 </div>
-          <div className="flex justify-end">
-  <button
-    type="button"
-    onClick={handleForgotPassword}
-    className="text-xs text-studio-silver/70 hover:text-studio-silver transition-colors underline cursor-pointer"
-  >
-    نسيت كلمة المرور؟
-  </button>
-</div>
+ 
           <Button
             type="submit"
             disabled={loading}
