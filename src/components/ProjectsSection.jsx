@@ -188,7 +188,7 @@ export default function ProjectsSection() {
             <img src={detailProject.img} alt={detailProject.title} className="mb-8 block h-auto w-full" />
             }
 
-              <span className="font-mono text-xs tracking-[0.3em] text-white/70">{detailProject.tag}</span>
+              <span className="font-mono tracking-[0.3em] text-white/70 text-base">{detailProject.tag}</span>
               <h3 className="mt-3 font-display text-4xl font-black text-white md:text-6xl">
                 {detailProject.title}
               </h3>
