@@ -46,8 +46,20 @@ export default function HeroEditor() {
       <TextField label="الكلمة المميزة" value={form.title_highlight} onChange={set("title_highlight")} />
       <TextField label="تكملة العنوان" value={form.title_post} onChange={set("title_post")} />
       <TextField label="زر التشغيل" value={form.cta_play} onChange={set("cta_play")} />
-      <TextField label="نص الرابط" value={form.cta_stats} onChange={set("cta_stats")} />
-      <TextField label="معرّف الفيديو (Vimeo ID)" value={form.vimeo_id} onChange={set("vimeo_id")} />
+      <div className="space-y-2">
+  <label className="text-studio-silver/60 text-xs">رفع الفيديو</label>
+  <input
+    type="file"
+    accept="video/*"
+    onChange={(e) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        set("video_file")(file);
+      }
+    }}
+    className="w-full text-xs text-studio-silver bg-slate-container border border-studio-silver/15 rounded p-2 file:bg-studio-silver/20 file:text-studio-silver file:border-0 file:rounded file:px-3 file:py-1 file:ml-3 hover:file:bg-studio-silver/30 cursor-pointer"
+  />
+</div>
       <Button
         onClick={handleSave}
         disabled={saving}
