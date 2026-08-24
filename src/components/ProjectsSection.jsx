@@ -205,7 +205,7 @@ export default function ProjectsSection() {
                 <ul className="mt-3 space-y-2">
                   {detailProject.scope.map((s, idx) =>
                 <li key={idx} className="flex items-start gap-3 font-body text-white /90">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-amber" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-white" />
                       {s}
                     </li>
                 )}
@@ -213,7 +213,7 @@ export default function ProjectsSection() {
               </div>
 
               <div className="mt-8">
-                <h4 className="font-display text-lg font-black text-amber">النتيجة</h4>
+                <h4 className="font-display text-lg font-black text-white">النتيجة</h4>
                 <p className="mt-3 font-body text-base leading-relaxed text-studio-silver/70">
                   {detailProject.result}
                 </p>
