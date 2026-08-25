@@ -195,7 +195,7 @@ export default function ProjectsSection() {
 
               <div className="mt-8">
                 <h4 className="text-white text-3xl [font-family:'SF_Arabic',_sans-serif] font-medium">عن العمل</h4>
-                <p className="mt-3 font-body text-base leading-relaxed text-white/90">
+                <p className="mt-3 font-body leading-relaxed text-white/90 text-base">
                   {detailProject.about}
                 </p>
               </div>
@@ -204,7 +204,7 @@ export default function ProjectsSection() {
                 <h4 className="font-display font-black text-white text-3xl">المطلوب للمشروع</h4>
                 <ul className="mt-3 space-y-2">
                   {detailProject.scope.map((s, idx) =>
-                <li key={idx} className="flex items-start gap-3 font-body text-white/90">
+                <li key={idx} className="flex items-start gap-3 font-body text-white/90 text-base">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-white" />
                       {s}
                     </li>
