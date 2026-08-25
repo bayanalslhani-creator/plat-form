@@ -36,8 +36,8 @@ export default function PartnersSection() {
             
             
               <img
-  src={logo.src}
-  alt={logo.alt}
+  src={`${BASE}${id}.png${id === "003" ? "?v=1" : ""}`}
+  alt={`Partner ${id}`}
   className="h-12 w-auto object-contain brightness-100 opacity-100 grayscale-0 transition-all duration-300 hover:brightness-50 hover:opacity-60 hover:grayscale active:opacity-50"
 />
             </motion.div>
