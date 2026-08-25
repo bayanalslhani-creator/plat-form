@@ -157,19 +157,7 @@
   -webkit-text-stroke: 0.4px white;
 }
 
-.mt-14 h2 {
-  font-weight: 900 !important;
-  -webkit-text-stroke: 0.4px currentColor;
-}
-#projects h2 {
-  font-weight: 900 !important;
-  -webkit-text-stroke: 0.4px currentColor;
-}
 
-.motion-cta h2 {
-  font-weight: 900 !important;
-  -webkit-text-stroke: 0.4px currentColor;
-}
 
 @tailwind base;
 @tailwind components;
