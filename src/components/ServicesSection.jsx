@@ -43,7 +43,7 @@ export default function ServicesSection() {
         <div className="mb-14 max-w-3xl md:mb-16">
           <span className="block h-px w-8 bg-amber/60" />
           <span className="mt-4 block font-mono tracking-[0.4em] text-studio-silver text-lg md:text-xl">خدماتنا</span>
-          <h2 className="mt-3 font-display text-3xl font-black leading-tight text-studio-silver md:text-5xl">
+          <h2 className="mt-3 text-3xl leading-tight text-studio-silver md:text-5xl [font-family:'SF_Arabic',_sans-serif] font-medium">
             خدمات <span className="text-amber">شاملة</span> في مكان واحد
           </h2>
           <p className="mt-6 font-body text-lg text-studio-silver/65">
