@@ -26,7 +26,7 @@ function StatCard({ stat, index }) {
         <div className="mt-4 text-base font-semibold text-studio-silver md:text-lg">
           {stat.label}
         </div>
-        <div className="mt-1.5 font-mono text-[10px] tracking-[0.25em] text-amber/50 rounded-sm">
+        <div className="mt-1.5 font-mono text-[10px] tracking-normal text-amber/50 rounded-sm">
           {stat.sub}
         </div>
       </div>
