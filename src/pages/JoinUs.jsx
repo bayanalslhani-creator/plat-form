@@ -59,7 +59,7 @@ export default function JoinUs() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 text-center"
         >
-          <span className="font-mono text-xs tracking-[0.4em] text-amber">
+          <span className="font-mono text-xs tracking-[0.4em] text-white">
             انضم إلى الفريق
           </span>
           <h1 className="mt-5 font-display text-4xl font-black leading-tight text-studio-silver md:text-6xl">
