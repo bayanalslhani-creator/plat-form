@@ -70,7 +70,6 @@ export default function SiteFooter() {
         {/* info grid */}
         <div className="mt-24 grid grid-cols-1 gap-12 border-t border-studio-silver/10 py-16 md:grid-cols-3">
           <div>
-            <h4 className="font-mono text-xs tracking-[0.3em] text-studio-silver/40">من نحن</h4>
             <p className="mt-5 font-body text-sm leading-relaxed text-studio-silver/50">
               {footer.about_text}
             </p>
