@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap');
 
 /* base44-workspace-fonts:start */
+@font-face {
+  font-family: 'Avenir Light';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./assets/fonts/sf-light.woff2') format('woff2');
+}
 
+*{
+  font-family: 'SF LIGHT', sans-serif !important;
+  font-weight: 300 !important;}
 @font-face {
   font-family: 'Avenir 55 Roman';
   font-weight: 400;
