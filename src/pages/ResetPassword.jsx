@@ -22,7 +22,7 @@ const handleSubmit = (e) => {
   setLoading(true);
 
   // ايميلك والباسوورد الثابتين هنا
-  const ADMIN_EMAIL = "Info@platformm.sa";
+  const ADMIN_EMAIL = "lnfo@platformm.sa";
   const ADMIN_PASSWORD = "A5613qwsa";
 
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
