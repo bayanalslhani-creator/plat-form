@@ -12,7 +12,7 @@ export default function PartnersSection() {
     <section id="partners" dir="rtl" className="relative bg-obsidian py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
-          <h2 className="text-3xl font-black leading-tight text-studio-silver md:text-5xl [font-family:'SF_Arabic',_sans-serif]">
+          <h2 className="text-3xl leading-tight text-studio-silver md:text-5xl [font-family:'SF_Arabic',_sans-serif] font-medium">
             شركاء <span className="text-white">بلاتفورم</span>
           </h2>
           <p className="mt-6 font-body text-base leading-relaxed text-studio-silver/60">
@@ -32,6 +32,7 @@ export default function PartnersSection() {
             transition={{ duration: 0.5, delay: i % 6 * 0.06 }}
             className="flex aspect-[3/2] items-center justify-center bg-obsidian p-5 transition-colors hover:bg-stale-container
             ">
+            
             
             
               <img
