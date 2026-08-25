@@ -15,15 +15,15 @@ export default function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
 const handleSubmit = (e) => {
   e.preventDefault();
   setError("");
   setLoading(true);
 
   // ايميلك والباسوورد الثابتين هنا
-  const ADMIN_EMAIL = "admin@example.com";
-  const ADMIN_PASSWORD = "123456password";
+  const ADMIN_EMAIL = "Info@platformm.sa";
+  const ADMIN_PASSWORD = "A5613qwsa";
 
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
     window.location.href = returnTo;
