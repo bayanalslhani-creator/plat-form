@@ -3,7 +3,7 @@ const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a5
 const NAV = [ { label: "الرئيسية", href: "#home" }, { label: "عننا", href: "#about" }, { label: "الخدمات", href: "#services" }, { label: "مشاريعنا", href: "#projects" }, { label: "شركاؤنا", href: "#partners" }, ];
 export default function Navbar() { const [scrolled, setScrolled] = useState(false); const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", onScroll); return () => window.removeEventListener("scroll", onScroll); }, []);
-return ( <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }} dir="rtl" className={`fixed top-0 z-50 w-full transition-all duration-500 ${ scrolled || mobileMenuOpen ? "border-b border-white/10 bg-black/60 backdrop-blur-md" : "border-b border-transparent bg-black/20 backdrop-blur-sm" }`} > <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"> {/* الشعار */} <Link to="/" className="flex items-center gap-2.5"> <img src={LOGO} alt="Plat Form Media" className="h-16 w-auto rounded-md mix-blend-screen" /> </Link>
+return ( <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }} dir="rtl" className={fixed top-0 z-50 w-full transition-all duration-500 ${ scrolled || mobileMenuOpen ? "border-b border-white/10 bg-black/40 backdrop-blur-md" : "border-b border-transparent bg-transparent" }} > <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"> {/* الشعار */} <Link to="/" className="flex items-center gap-2.5"> <img src={LOGO} alt="Plat Form Media" className="h-16 w-auto rounded-md mix-blend-screen" /> </Link>
     {/* الروابط للشاشات الكبيرة */}
     <div className="hidden items-center gap-8 md:flex">
       {NAV.map((item) => (
@@ -37,7 +37,7 @@ return ( <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 
     </button>
   </div>
 
-  {/* القائمة المنسدلة للجوال - تعتيم خفيف بزجاج شفاف */}
+  {/* القائمة المنسدلة للجوال - تعتيم خفيف بنفس درجة الأعلى مع بلور ناعم */}
   <AnimatePresence>
     {mobileMenuOpen && (
       <motion.div
@@ -45,7 +45,7 @@ return ( <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 
         animate={{ opacity: 1, height: "auto" }}
         exit={{ opacity: 0, height: 0 }}
         transition={{ duration: 0.3 }}
-        className="border-t border-white/10 bg-black/60 px-6 py-6 backdrop-blur-md md:hidden"
+        className="bg-black/40 px-6 py-6 backdrop-blur-md md:hidden"
       >
         <div className="flex flex-col gap-5">
           {NAV.map((item) => (
