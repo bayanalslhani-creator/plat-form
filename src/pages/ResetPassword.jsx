@@ -15,25 +15,23 @@ export default function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setError("");
+  setLoading(true);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    if (newPassword !== confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
-    setLoading(true);
-    try {
-      await base44.auth.resetPassword({ resetToken, newPassword });
-      window.location.href = "/login";
-    } catch (err) {
-      setError(err.message || "Failed to reset password");
-    } finally {
-      setLoading(false);
-    }
-  };
+  // ايميلك والباسوورد الثابتين هنا
+  const ADMIN_EMAIL = "admin@example.com";
+  const ADMIN_PASSWORD = "123456password";
 
+  if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+    window.location.href = returnTo;
+  } else {
+    setError("البريد الإلكتروني أو كلمة المرور غير صحيحة");
+    setLoading(false);
+  }
+};
   if (!resetToken) {
     return (
       <AuthLayout
