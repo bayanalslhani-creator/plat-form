@@ -152,6 +152,10 @@
   font-style: normal;
   font-display: swap;
 }
+.mt-8 h4 {
+  font-weight: 900 !important;
+  -webkit-text-stroke: 0.4px white;
+}
 
 @tailwind base;
 @tailwind components;
