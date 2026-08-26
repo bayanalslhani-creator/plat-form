@@ -1,22 +1,25 @@
-import { useState } from "react"; import { Button } from "@/components/ui/button"; import { Input } from "@/components/ui/input"; import { Label } from "@/components/ui/label"; import { Lock, Mail, Loader2 } from "lucide-react"; import { Link } from "react-router-dom";
+import { useState } from "react"; import { Button } from "@/components/ui/button"; import { Input } from "@/components/ui/input"; import { Label } from "@/components/ui/label"; import { Lock, Mail, Loader2 } from "lucide-react"; import { Link, useNavigate } from "react-router-dom";
 const LOGO = "https://media.base44.com/images/public/6a6f7ad42956b021bd3930bf/a28a3753d_.svg";
 export default function AdminLogin() { const [email, setEmail] = useState(""); const [password, setPassword] = useState(""); const [error, setError] = useState(""); const [loading, setLoading] = useState(false);
+const navigate = useNavigate();
 const handleSubmit = (e) => { e.preventDefault(); setError(""); setLoading(true);
-// تنظيف الحقول وتحويل البريد لحروف صغيرة لتفادي خطأ Capital/Small
 const cleanEmail = email.trim().toLowerCase();
 const cleanPassword = password.trim();
 
-// قبول البريد سواء كتب بالـ i أو الـ l مع الباسوورد الثابت
 const isValidEmail = cleanEmail === "info@platformm.sa" || cleanEmail === "lnfo@platformm.sa";
 const isValidPassword = cleanPassword === "A5613qwsa";
 
 if (isValidEmail && isValidPassword) {
-  // حفظ الجلسة في المتصفح لتجاوز الحماية والتوجيه
+  // 1. حفظ الجلسة في المتصفح
   localStorage.setItem("isAdminAuthenticated", "true");
   localStorage.setItem("adminEmail", cleanEmail);
 
-  // التوجيه المباشر للمسار الصحيح دون إيقاف الـ loading
-window.location.href = "/AdminDashboard";
+  // 2. التوجيه الناعم والمباشر عبر useNavigate لتفادي تعليق الصفحة
+  // ملاحظة: تأكدي أن المسار في App.jsx يطابق تماماً /admin-dashboard أو /admin/dashboard
+  setTimeout(() => {
+    navigate("/admin-dashboard"); 
+  }, 100);
+
 } else {
   setError("بيانات الدخول غير صحيحة");
   setLoading(false);
