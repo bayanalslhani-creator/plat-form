@@ -15,8 +15,8 @@ if (isValidEmail && isValidPassword) {
   localStorage.setItem("isAdminAuthenticated", "true");
   localStorage.setItem("adminEmail", cleanEmail);
 
-  setLoading(false);
-  window.location.href = "/admin";
+  // التوجيه المباشر للمسار الصحيح دون إيقاف الـ loading
+window.location.href = "/admin/dashboard";
 } else {
   setError("بيانات الدخول غير صحيحة");
   setLoading(false);
