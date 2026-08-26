@@ -17,7 +17,7 @@ if (isValidEmail && isValidPassword) {
   // 2. التوجيه الناعم والمباشر عبر useNavigate لتفادي تعليق الصفحة
   // ملاحظة: تأكدي أن المسار في App.jsx يطابق تماماً /admin-dashboard أو /admin/dashboard
   setTimeout(() => {
-    navigate("/AdminDashboard"); 
+    navigate("/admin"); 
   }, 100);
 
 } else {
