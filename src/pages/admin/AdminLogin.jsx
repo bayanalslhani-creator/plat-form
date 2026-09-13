@@ -6,7 +6,7 @@ const handleSubmit = (e) => { e.preventDefault(); setError(""); setLoading(true)
 const cleanEmail = email.trim().toLowerCase();
 const cleanPassword = password.trim();
 
-const isValidEmail = cleanEmail === "info@platformm.sa" || cleanEmail === "lnfo@platformm.sa";
+const isValidEmail = cleanEmail === "info@platformm.sa";
 const isValidPassword = cleanPassword === "A5613qwsa";
 
 if (isValidEmail && isValidPassword) {
